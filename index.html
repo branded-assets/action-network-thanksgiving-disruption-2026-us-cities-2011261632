@@ -1,0 +1,501 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Action Network ranks 16 U.S. metros using Thanksgiving flight-delay records and AAA/INRIX road congestion forecasts, with a separate 2026 weather outlook."><title>Thanksgiving Travel 2026: Flight and Road Disruption | The Action Network</title><style>
+#rg-research-root{--rg-navy:#0c1c16;--rg-dark:#091712;--rg-blue:#00bd70;--rg-deep:#087d50;--rg-light:#ebf9f1;--rg-paper:#f6fbf8;--rg-line:#dbece2;--rg-muted:#50665a;--rg-type:Arial,Helvetica,sans-serif;isolation:isolate;position:relative;width:100%;max-width:100%;margin:0 auto;background:white;color:#0c1c16;font:17px/1.55 Arial,Helvetica,sans-serif;overflow-x:clip}
+#rg-research-root,#rg-research-root *,#rg-research-root *::before,#rg-research-root *::after{box-sizing:border-box}
+#rg-research-root button,#rg-research-root input{font:inherit}
+#rg-research-root button{cursor:pointer;border-radius:0}
+#rg-research-root button:focus-visible,#rg-research-root input:focus-visible,#rg-research-root a:focus-visible,#rg-research-root [tabindex]:focus-visible{outline:3px solid #2bc98a;outline-offset:3px}
+#rg-research-root a{color:#087d50}
+#rg-research-root .rg-wrap{width:100%;max-width:1390px;margin:0 auto;padding-inline:clamp(16px,2.7vw,42px)}
+#rg-research-root .rg-word{font-size:20px;font-weight:900;letter-spacing:-.055em;color:#fff;white-space:nowrap}
+#rg-research-root .rg-word span{color:#76edaa}
+#rg-research-root .rg-bluebar{height:4px;background:#00bd70}
+#rg-research-root .rg-top{background:linear-gradient(110deg,#08160f,#11291e 80%,#163b2b);padding:17px 0 21px;color:#fff}
+#rg-research-root .rg-topmeta{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-bottom:13px;flex-wrap:wrap}
+#rg-research-root .rg-topmeta small{color:#c4e2d0;font:600 13px/1.4 Arial,Helvetica,sans-serif}
+#rg-research-root .rg-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;border:1px solid #345345;background:#345345}
+#rg-research-root .rg-stat{padding:16px 17px 15px;background:#10261c;min-width:0}
+#rg-research-root .rg-stat strong{display:block;font-size:clamp(27px,3.0vw,42px);font-weight:900;line-height:1.13;letter-spacing:-.04em;color:#fff;font-variant-numeric:tabular-nums}
+#rg-research-root .rg-stat strong[data-format]{color:#8cf0b7}
+#rg-research-root .rg-stat span{display:block;margin-top:7px;font-size:13px;line-height:1.4;color:#e1efe7;font-weight:700}
+#rg-research-root .rg-stat small{display:block;margin-top:4px;color:#aacbbb;font-size:12px;line-height:1.35}
+#rg-research-root .rg-nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);border-bottom:1px solid #d5e7db;box-shadow:0 7px 21px #091d3a0c;backdrop-filter:blur(9px)}
+#rg-research-root .rg-navtrack{display:flex;align-items:center;gap:6px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb;white-space:nowrap;padding-block:9px}
+#rg-research-root .rg-nav button{flex:0 0 auto;background:#fff;color:#365546;font-size:14px;font-weight:800;border:1px solid #d9ecdf;padding:9px 12px;min-height:40px;white-space:nowrap}
+#rg-research-root .rg-nav button:hover,#rg-research-root .rg-nav button.rg-active{color:#fff;background:#0c1c16;border-color:#0c1c16;box-shadow:inset 0 -3px 0 #00bd70}
+#rg-research-root .rg-section{padding:clamp(28px,3.4vw,48px) 0;border-bottom:1px solid #dcebe0;scroll-margin-top:80px}
+#rg-research-root .rg-section.rg-alt{background:#f6fbf8}
+#rg-research-root .rg-section h2{font-size:clamp(27px,2.8vw,38px);line-height:1.13;letter-spacing:-.035em;margin:0 0 8px;font-weight:900;color:#0c1c16}
+#rg-research-root .rg-section h2::before{content:"";display:inline-block;vertical-align:-4px;width:5px;height:30px;margin-right:13px;background:#00bd70}
+#rg-research-root .rg-sub{font-size:clamp(15px,1.4vw,17px);color:#50665a;margin:0 0 22px;max-width:1150px;line-height:1.57}
+#rg-research-root .rg-kicker{display:inline-block;margin:0 0 10px;color:#087d50;font-size:13px;font-weight:900}
+#rg-research-root .rg-riskframe{border:1px solid #b9d6c5;background:#fff;box-shadow:0 14px 34px #0c1c1610}
+#rg-research-root .rg-riskhead{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 18px;padding:16px 20px;background:#0c1c16;color:#fff;border-bottom:4px solid #00bd70}
+#rg-research-root .rg-riskhead b{font-size:18px;font-weight:900}
+#rg-research-root .rg-riskhead small{font-size:12px;color:#bbcee4}
+#rg-research-root .rg-riskgrid{display:block;min-width:0}
+#rg-research-root .rg-chartarea{padding:16px;min-width:0;background:linear-gradient(180deg,#f6fbf8,#fff)}
+#rg-research-root .rg-charttop{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 16px;flex-wrap:wrap;margin:0 0 12px}
+#rg-research-root .rg-charttop .rg-snapshotlabel{margin:0;font-size:14px}
+#rg-research-root .rg-chartselect{display:flex;gap:7px;align-items:stretch;flex:1 1 620px;max-width:780px}
+#rg-research-root .rg-chartselect .rg-select-trigger{background:#fff}
+#rg-research-root .rg-chartmeta{font-size:13px;color:#5a6d80;font-weight:700}
+#rg-research-root .rg-chartscroll{position:relative;width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb;border:1px solid #d8e3ef;background:#fff}
+#rg-research-root .rg-chartscroll svg{display:block;width:100%;min-width:610px;height:auto;cursor:crosshair}
+#rg-research-root .rg-chartcaption{font-size:13px;color:#5c6d7d;margin:8px 3px 0;line-height:1.45}
+#rg-research-root .rg-chartoverlay{position:absolute;right:18px;top:18px;z-index:2;width:300px;max-width:calc(100% - 36px);padding:14px 16px 12px;border:1px solid #cfdeee;background:rgba(255,255,255,.96);box-shadow:0 12px 24px rgba(16,24,32,.10);backdrop-filter:blur(4px)}
+#rg-research-root .rg-overlayhead small{display:block;font-size:12px;font-weight:800;color:#576d60;line-height:1.3}
+#rg-research-root .rg-overlayhead strong{display:block;margin-top:2px;font-size:29px;font-weight:900;letter-spacing:-.04em;color:#0c1c16;line-height:1.05}
+#rg-research-root .rg-overlaystats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:11px;padding-top:11px;border-top:1px solid #dbece2}
+#rg-research-root .rg-overlaystat small{display:block;font-size:11px;font-weight:800;color:#576d60;line-height:1.3}
+#rg-research-root .rg-overlaystat strong{display:block;margin-top:4px;font-size:24px;font-weight:900;color:#087d50;letter-spacing:-.04em;line-height:1.05;font-variant-numeric:tabular-nums}
+#rg-research-root .rg-snapshot{border-left:1px solid #dbece2;padding:20px 18px 19px;background:#f5f8fd;min-width:0}
+#rg-research-root .rg-snapshotlabel{font-size:13px;font-weight:800;color:#516880;margin-bottom:5px}
+#rg-research-root .rg-selected{font-size:clamp(22px,2vw,29px);font-weight:900;letter-spacing:-.04em;line-height:1.12;margin:0 0 10px;min-height:56px}
+#rg-research-root .rg-locationnav{display:flex;gap:7px;align-items:stretch;margin:0 0 18px}
+#rg-research-root .rg-iconbtn{flex:0 0 43px;display:grid;place-items:center;min-height:45px;padding:0;background:#fff;border:1px solid #bfd9ca;color:#087d50;font-size:23px!important;font-weight:800!important}
+#rg-research-root .rg-iconbtn:hover{background:#ebf9f1;border-color:#00bd70}
+#rg-research-root .rg-select-trigger{flex:1;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:9px;padding:10px 13px;border:1px solid #bdcddd;background:#fff;color:#0c1c16;font-weight:800;font-size:15px;min-height:45px;text-align:left}
+#rg-research-root .rg-select-trigger:hover,#rg-research-root .rg-select-trigger[aria-expanded=true]{border-color:#00bd70;background:#ebf9f1}
+#rg-research-root .rg-select-trigger span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#rg-research-root .rg-chevron{color:#087d50;font-size:15px;transition:transform .2s;flex-shrink:0}
+#rg-research-root .rg-select-trigger[aria-expanded=true] .rg-chevron{transform:rotate(180deg)}
+#rg-research-root .rg-snapshotstat{border-top:1px solid #d7e9df;padding:13px 0}
+#rg-research-root .rg-snapshotstat small{display:block;font-size:13px;font-weight:700;color:#576d60;line-height:1.35}
+#rg-research-root .rg-snapshotstat strong{display:block;margin-top:2px;font-size:clamp(24px,2.4vw,33px);font-weight:900;color:#087d50;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+#rg-research-root .rg-snapshotstat:last-child{padding-bottom:0}
+#rg-research-root .rg-micro{font-size:12px;line-height:1.5;color:#566d83;margin:11px 0 0}
+#rg-research-root .rg-return{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:27px}
+#rg-research-root .rg-return::before,#rg-research-root .rg-return::after{content:"";height:1px;flex:1;min-width:0;background:linear-gradient(90deg,transparent,#c7dbcf)}
+#rg-research-root .rg-return::after{background:linear-gradient(90deg,#c7dbcf,transparent)}
+#rg-research-root .rg-return button{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#0c1c16;border:1px solid #0c1c16;border-bottom:3px solid #00bd70;color:#fff;padding:11px 19px;min-height:44px;font-size:14px;font-weight:800}
+#rg-research-root .rg-return button:hover{background:#087d50;border-color:#087d50}
+#rg-research-root .rg-finding{display:grid;grid-template-columns:44px minmax(0,1fr) minmax(125px,200px);gap:14px 22px;padding:24px clamp(18px,2.5vw,30px);margin-bottom:12px;border:1px solid #d9e9df;border-left:5px solid #00bd70;background:#fff;box-shadow:0 7px 18px #0c1c1608}
+#rg-research-root .rg-finding:first-of-type{background:linear-gradient(110deg,#0c1c16,#172c43);border-color:#0c1c16;border-left-color:#00bd70;color:#fff}
+#rg-research-root .rg-fidx{font-size:24px;font-weight:900;color:#00bd70}
+#rg-research-root .rg-finding:first-of-type .rg-fidx{color:#94eab8}
+#rg-research-root .rg-fbody h3{margin:1px 0 0;font-size:clamp(20px,2vw,25px);font-weight:900;letter-spacing:-.025em;line-height:1.23;color:inherit}
+#rg-research-root .rg-fcategory{font-size:13px;font-weight:800;color:#087d50;margin-bottom:6px}
+#rg-research-root .rg-finding:first-of-type .rg-fcategory{color:#9ec8ff}
+#rg-research-root .rg-fnum{font-size:clamp(27px,3.5vw,42px);font-weight:900;color:#087d50;justify-self:end;text-align:right;line-height:1.13;letter-spacing:-.05em;font-variant-numeric:tabular-nums;align-self:center}
+#rg-research-root .rg-finding:first-of-type .rg-fnum{color:#91e6b7}
+#rg-research-root .rg-fbody p{grid-column:1/-1;color:#566a7e;margin:10px 0 0;font-size:16px;line-height:1.62}
+#rg-research-root .rg-finding:first-of-type .rg-fbody p{color:#d8e8f6}
+#rg-research-root .rg-fbody{grid-column:2;min-width:0}
+#rg-research-root .rg-fbody p{margin-top:13px}
+#rg-research-root .rg-controlrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 18px;margin:18px 0 14px}
+#rg-research-root .rg-tabs{display:flex;flex-wrap:wrap;gap:6px}
+#rg-research-root .rg-tab{min-height:44px;padding:10px 16px;color:#2a4158;background:#fff;border:1px solid #cce4d5;font-size:15px;font-weight:800}
+#rg-research-root .rg-tab:hover{background:#ebf9f1;border-color:#00bd70}
+#rg-research-root .rg-tab[aria-pressed=true]{background:#0c1c16;border-color:#0c1c16;color:#fff;box-shadow:inset 0 -4px 0 #00bd70}
+#rg-research-root .rg-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+#rg-research-root .rg-export{min-height:42px;padding:9px 13px;color:#fff;background:#00bd70;border:1px solid #00bd70;font-size:14px;font-weight:800}
+#rg-research-root .rg-export.rg-outline{color:#087d50;background:#fff;border-color:#99d5b4}
+#rg-research-root .rg-export:hover{background:#087d50;color:#fff;border-color:#087d50}
+#rg-research-root .rg-tablebox{border:1px solid #d6e9dd;background:#fff;box-shadow:0 9px 25px #0c1c160a;min-width:0}
+#rg-research-root .rg-tabletool{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;padding:11px 14px;background:#ebf9f1;border-bottom:1px solid #d6e9dd}
+#rg-research-root .rg-tabletool span{font-size:13px;color:#50665a}
+#rg-research-root .rg-tabletool b{font-weight:900;color:#0c1c16}
+#rg-research-root .rg-tablearrows{display:flex;gap:6px;margin-left:auto}
+#rg-research-root .rg-tablearrows button{width:40px;height:38px;border:1px solid #bad0ea;background:white;color:#087d50;font-size:22px;font-weight:800;display:grid;place-items:center}
+#rg-research-root .rg-tablearrows button:hover:not(:disabled){background:#dff5e7;border-color:#00bd70}
+#rg-research-root .rg-tablearrows button:disabled{opacity:.33;cursor:not-allowed}
+#rg-research-root .rg-scroll{overflow-x:auto;width:100%;max-width:100%;scroll-behavior:smooth;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb}
+#rg-research-root .rg-table{width:100%;min-width:830px;border-collapse:collapse;font-size:15px;line-height:1.35;font-variant-numeric:tabular-nums}
+#rg-research-root .rg-table.rg-wide{min-width:1100px}
+#rg-research-root .rg-table th{padding:13px 10px;background:#0c1c16;color:#fff;border-right:1px solid #35475c;font-size:13px;font-weight:800;text-align:left;white-space:nowrap;vertical-align:middle}
+#rg-research-root .rg-table th.rg-num,#rg-research-root .rg-table td.rg-num{text-align:center}
+#rg-research-root .rg-table td{padding:13px 11px;border-bottom:1px solid #e4eee6;white-space:nowrap;vertical-align:middle}
+#rg-research-root .rg-table tbody tr:nth-child(even){background:#f5fbf7}
+#rg-research-root .rg-table tbody tr:hover{background:#ebf9f1}
+#rg-research-root .rg-table td.rg-rank{font-size:19px;font-weight:900;color:#087d50}
+#rg-research-root .rg-table td.rg-city{font-weight:900;white-space:normal;min-width:180px}
+#rg-research-root .rg-table .rg-thgroup{display:flex;align-items:center;gap:4px;justify-content:flex-start}
+#rg-research-root .rg-table th.rg-num .rg-thgroup{justify-content:center}
+#rg-research-root .rg-thgroup .rg-sort{border:0;background:transparent;color:inherit;font-size:13px;font-weight:800;padding:0 3px;min-height:28px;text-align:inherit}
+#rg-research-root .rg-sort:hover{color:#91e6b7}
+#rg-research-root .rg-sort .rg-sortdir{color:#9dc8ff;margin-left:2px}
+#rg-research-root .rg-info{width:26px;height:28px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:0;background:transparent;color:#84e9ad;flex:0 0 auto}
+#rg-research-root .rg-info i{width:15px;height:15px;border:1.4px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:10px;line-height:1;font-weight:700;font-style:normal}
+#rg-research-root .rg-info:hover,#rg-research-root .rg-info:focus-visible{color:#fff}
+#rg-research-root .rg-tablefoot{padding:11px 14px;font-size:13px;color:#65788c;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+#rg-research-root .rg-smallword{font-weight:900;color:#0c1c16;font-size:13px;letter-spacing:-.04em;white-space:nowrap}
+#rg-research-root .rg-smallword em{font-style:normal;color:#00bd70}
+#rg-research-root .rg-indicatorframe{border:1px solid #d5e1ee;background:white;box-shadow:0 9px 25px #0c1c160a;padding:clamp(15px,2.3vw,28px)}
+#rg-research-root .rg-indicatortop{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;border-bottom:1px solid #d9e8df;padding:14px 0 17px;margin-bottom:13px}
+#rg-research-root .rg-indicatortop strong{font-size:clamp(26px,3.2vw,38px);font-weight:900;color:#087d50;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+#rg-research-root .rg-indicatortop small{display:block;font-size:13px;color:#546b81;font-weight:800;margin-bottom:5px}
+#rg-research-root .rg-indicatortop .rg-topname{font-size:18px;font-weight:900;color:#0c1c16}
+#rg-research-root .rg-barrow{display:grid;grid-template-columns:minmax(124px,220px) minmax(85px,1fr) 90px;gap:13px;align-items:center;padding:11px 3px;border-bottom:1px solid #e3ebf4;min-width:0}
+#rg-research-root .rg-barname{font-size:15px;font-weight:800;line-height:1.2;min-width:0}
+#rg-research-root .rg-barname small{font-size:12px;color:#718296;display:block;margin-top:4px}
+#rg-research-root .rg-bartrack{height:15px;background:#eaf0f9;overflow:hidden}
+#rg-research-root .rg-barfill{height:100%;width:0;background:linear-gradient(90deg,#087d50,#6ddda1);transition:width .78s cubic-bezier(.2,.78,.18,1)}
+#rg-research-root .rg-barval{text-align:right;font-size:19px;font-weight:900;color:#087d50;white-space:nowrap;font-variant-numeric:tabular-nums}
+#rg-research-root .rg-chartnote{font-size:13px;color:#60768a;margin:15px 0 0}
+#rg-research-root .rg-fullcontrols{display:flex;flex-wrap:wrap;gap:12px;margin:17px 0 14px;align-items:end}
+#rg-research-root .rg-field{min-width:230px;flex:1;display:flex;flex-direction:column;gap:6px}
+#rg-research-root .rg-field label{font-size:13px;color:#354b5f;font-weight:800}
+#rg-research-root .rg-field input{height:47px;width:100%;min-width:0;border:1px solid #bdcddd;background:#fff;color:#0c1c16;padding:11px 13px;font-size:16px}
+#rg-research-root .rg-field .rg-select-trigger{width:100%;height:47px}
+#rg-research-root .rg-pager{display:flex;gap:5px;align-items:center;justify-content:flex-end}
+#rg-research-root .rg-pager button{padding:7px 11px;min-height:36px;background:#fff;border:1px solid #b8d7c6;color:#087d50;font-weight:800;font-size:14px}
+#rg-research-root .rg-pager button:hover:not(:disabled){background:#ebf9f1}
+#rg-research-root .rg-pager button:disabled{opacity:.4;cursor:not-allowed}
+#rg-research-root .rg-pager span{font-size:13px;color:#50665a;padding:0 6px}
+#rg-research-root .rg-methodrow{padding:20px 0;border-bottom:1px solid #dbece2}
+#rg-research-root .rg-methodrow h3{margin:0 0 7px;font-size:18px;font-weight:900;color:#0c1c16}
+#rg-research-root .rg-methodrow p{margin:0;font-size:16px;line-height:1.65;color:#50665a;max-width:1220px}
+#rg-research-root .rg-sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:17px}
+#rg-research-root .rg-source{border:1px solid #dbece2;background:#fff;padding:13px 16px;min-width:0}
+#rg-research-root .rg-source b{display:block;font-size:15px;font-weight:900;margin-bottom:5px}
+#rg-research-root .rg-source a,#rg-research-root .rg-source span{display:block;font-size:13px;line-height:1.45;overflow-wrap:anywhere}
+#rg-research-root .rg-note{font-size:14px;color:#50665a;line-height:1.6;background:#ebf9f1;border-left:4px solid #00bd70;padding:14px 17px;margin:18px 0}
+#rg-research-root .rg-overlay{position:fixed;z-index:10000;max-height:310px;overflow-y:auto;border:1px solid #9dd3b4;box-shadow:0 20px 42px #0c1c1630;background:#fff;scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb}
+#rg-research-root .rg-overlay[hidden],#rg-research-root .rg-tooltip[hidden]{display:none}
+#rg-research-root .rg-option{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:43px;white-space:normal;text-align:left;padding:10px 13px;border:0;border-bottom:1px solid #dcece2;background:#fff;color:#274b3a;font-size:15px;font-weight:700}
+#rg-research-root .rg-option:hover,#rg-research-root .rg-option.rg-hover{background:#ebf9f1;color:#087d50}
+#rg-research-root .rg-option[aria-selected=true]{background:#0c1c16;color:#fff}
+#rg-research-root .rg-tooltip{position:fixed;z-index:10001;pointer-events:none;width:max-content;max-width:min(290px,calc(100vw - 24px));padding:11px 13px;background:#0c1c16;color:#fff;border-left:4px solid #00bd70;box-shadow:0 14px 34px #0c1c1640;font-size:13px;line-height:1.5}
+#rg-research-root .rg-tooltip::after{content:"";position:absolute;left:var(--rg-arrow,50%);transform:translateX(-50%);top:100%;border:7px solid transparent;border-top-color:#0c1c16}
+#rg-research-root .rg-tooltip.rg-below::after{top:auto;bottom:100%;border:7px solid transparent;border-bottom-color:#0c1c16}
+#rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay)::-webkit-scrollbar{height:7px;width:7px}
+#rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay)::-webkit-scrollbar-track{background:#e6f4eb}
+#rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay)::-webkit-scrollbar-thumb{background:#00bd70;border-radius:7px}
+#rg-research-root.rg-framed{height:min(100dvh,900px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb}
+#rg-research-root.rg-framed::-webkit-scrollbar{width:8px}
+#rg-research-root.rg-framed::-webkit-scrollbar-thumb{background:#00bd70}
+@media(max-width:900px){#rg-research-root .rg-sources{grid-template-columns:1fr}#rg-research-root .rg-charttop{align-items:stretch}#rg-research-root .rg-chartselect{flex-basis:100%;max-width:none}#rg-research-root .rg-chartoverlay{width:280px}}
+@media(max-width:650px){#rg-research-root .rg-stats{grid-template-columns:repeat(2,minmax(0,1fr))}#rg-research-root .rg-stat{padding:12px 11px}#rg-research-root .rg-stat strong{font-size:28px}#rg-research-root .rg-stat span{font-size:12.5px}#rg-research-root .rg-topmeta small{font-size:11px}#rg-research-root .rg-riskhead{padding:13px}#rg-research-root .rg-chartarea{padding:10px}#rg-research-root .rg-charttop{margin-bottom:10px}#rg-research-root .rg-chartoverlay{right:10px;top:10px;width:250px;padding:12px}#rg-research-root .rg-overlayhead strong{font-size:25px}#rg-research-root .rg-overlaystats{gap:8px}#rg-research-root .rg-overlaystat strong{font-size:21px}#rg-research-root .rg-overlaystat small{font-size:10.5px}#rg-research-root .rg-finding{grid-template-columns:28px minmax(0,1fr);gap:9px 12px;padding:19px 14px}#rg-research-root .rg-fnum{grid-column:2;justify-self:start;text-align:left;margin-top:1px;font-size:31px}#rg-research-root .rg-fidx{font-size:20px}#rg-research-root .rg-fbody p{font-size:15px}#rg-research-root .rg-barrow{grid-template-columns:minmax(97px,36%) minmax(70px,1fr) 73px;gap:7px}#rg-research-root .rg-barname{font-size:13px}#rg-research-root .rg-barval{font-size:16px}#rg-research-root .rg-chartnote{font-size:12.5px}#rg-research-root .rg-tab{padding:9px 11px;font-size:14px}#rg-research-root .rg-section{padding:26px 0}#rg-research-root .rg-return{gap:8px}#rg-research-root .rg-return button{padding:10px 14px;font-size:13px}#rg-research-root .rg-tabletool{padding:9px 11px}#rg-research-root .rg-tabletool span{flex:1 1 180px}}
+@media(prefers-reduced-motion:reduce){#rg-research-root .rg-barfill,#rg-research-root .rg-chevron{transition:none!important}#rg-research-root .rg-scroll{scroll-behavior:auto}}
+
+/* Thanksgiving concise edition: one graphic, five findings, one results table. */
+#rg-research-root .rg-chartlegend{display:flex;align-items:center;gap:10px 15px;flex-wrap:wrap;padding:6px 4px 0;color:#50665a;font-size:13px;font-weight:700}
+#rg-research-root .rg-legendbubbles{display:inline-flex;align-items:center;gap:5px;height:25px}
+#rg-research-root .rg-legendbubbles i{display:inline-block;border:2px solid #00bd70;border-radius:50%;background:#aff1cb;vertical-align:middle}
+#rg-research-root .rg-legendbubbles i:first-child{width:10px;height:10px}
+#rg-research-root .rg-legendbubbles i:nth-child(2){width:17px;height:17px}
+#rg-research-root .rg-legendbubbles i:last-child{width:24px;height:24px}
+#rg-research-root .rg-snapshotstat{padding:10px 0}
+#rg-research-root .rg-snapshotstat strong{font-size:clamp(23px,2.5vw,32px)}
+#rg-research-root .rg-riskhead{gap:8px}
+#rg-research-root .rg-riskhead b{font-size:17px}
+#rg-research-root .rg-riskhead small{font-size:13px}
+#rg-research-root .rg-finding{grid-template-columns:40px minmax(0,1fr) minmax(125px,185px);margin-bottom:10px;padding-block:20px}
+#rg-research-root .rg-table.rg-wide{min-width:1260px}
+#rg-research-root .rg-table th.rg-rankcol{min-width:110px;width:110px}
+#rg-research-root .rg-table td.rg-rank{min-width:110px}
+#rg-research-root .rg-table th.rg-citycol{min-width:190px}
+#rg-research-root .rg-table th{white-space:normal}
+#rg-research-root .rg-table td{font-size:15px}
+#rg-research-root .rg-table td.rg-city{min-width:195px}
+#rg-research-root .rg-tabletool{min-height:48px}
+#rg-research-root .rg-select-trigger{min-height:46px}
+#rg-research-root .rg-shortmethod{margin-top:4px}
+#rg-research-root .rg-shortmethod .rg-methodrow{padding:14px 0}
+#rg-research-root .rg-sourceinline{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 0;font-size:14px}
+#rg-research-root .rg-sourceinline a{font-weight:700}
+#rg-research-root .rg-snapshotlabel{font-size:12px}
+#rg-research-root .rg-selected{min-height:0}
+#rg-research-root .rg-table .rg-thgroup{justify-content:center}
+#rg-research-root .rg-table th.rg-text .rg-thgroup{justify-content:flex-start}
+#rg-research-root .rg-fbody p{line-height:1.5}
+
+@media(max-width:650px){#rg-research-root .rg-finding{grid-template-columns:30px minmax(0,1fr)}#rg-research-root .rg-riskhead .rg-export{width:100%}#rg-research-root .rg-fbody p{font-size:15px}}
+@media(max-width:390px){#rg-research-root .rg-chartoverlay{width:220px;right:8px;top:8px;padding:11px 10px}#rg-research-root .rg-overlayhead strong{font-size:22px}#rg-research-root .rg-overlaystat strong{font-size:18px}}
+
+/* Bubble data popovers, outside the chart's clipped scroll container */
+#rg-research-root .rg-bubble-pop[hidden]{display:none}
+#rg-research-root .rg-bubble-pop{position:fixed;z-index:140;width:318px;max-width:calc(100vw - 20px);max-height:calc(100dvh - 20px);overflow:auto;background:#fff;color:#0c1c16;border:1px solid #c4dfcf;border-top:4px solid #00bd70;box-shadow:0 20px 52px rgba(16,24,32,.25);font:normal 15px/1.4 Arial,Helvetica,sans-serif;scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb}
+#rg-research-root .rg-bubble-pop::-webkit-scrollbar{width:6px}
+#rg-research-root .rg-bubble-pop::-webkit-scrollbar-thumb{background:#00bd70;border-radius:5px}
+#rg-research-root .rg-pophead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 17px 11px;border-bottom:1px solid #dde6f1}
+#rg-research-root .rg-pophead strong{font-size:20px;line-height:1.22;font-weight:900;letter-spacing:-.02em}
+#rg-research-root .rg-popclose{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;background:#ebf9f1;color:#087d50;border:1px solid #cae9d6;cursor:pointer;font-size:22px;line-height:1}
+#rg-research-root .rg-popclose:hover,#rg-research-root .rg-popclose:focus-visible{background:#087d50;color:#fff}
+#rg-research-root .rg-poplist{list-style:none;margin:0;padding:3px 17px 11px}
+#rg-research-root .rg-poplist li{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #edf2f8}
+#rg-research-root .rg-poplist li:last-child{border-bottom:0}
+#rg-research-root .rg-popicon{width:32px;height:32px;display:grid;place-items:center;border:1px solid #c6e5d4;background:#ebf9f1;color:#087d50}
+#rg-research-root .rg-popicon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#rg-research-root .rg-poplabel{min-width:0;color:#345e49;font-size:14px;font-weight:800;line-height:1.22}
+#rg-research-root .rg-popsub{display:block;margin-top:3px;font-size:12px;font-weight:500;color:#687e90;line-height:1.3}
+#rg-research-root .rg-popvalue{white-space:nowrap;font-size:21px;color:#087d50;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:-.035em}
+#rg-research-root #rg-scatter [role="button"]:focus-visible{outline:0}
+#rg-research-root #rg-scatter [role="button"]:focus-visible circle:first-child{stroke:#0c1c16;stroke-width:5}
+#rg-research-root .rg-chartarea{padding-bottom:15px}
+@media(max-width:650px){#rg-research-root .rg-bubble-pop{width:298px}#rg-research-root .rg-pophead{padding:12px 13px 9px}#rg-research-root .rg-poplist{padding:3px 13px 9px}#rg-research-root .rg-poplist li{gap:8px;padding:10px 0}#rg-research-root .rg-popvalue{font-size:20px}}
+
+/* The Action Network — editorial skin */
+#rg-research-root {--an-green:#00bd70;--an-forest:#087d50;--an-dark:#0c1c16;--an-mint:#ebf9f1;--an-line:#d6e9dd;font-size:16px}
+#rg-research-root .rg-word{display:flex;align-items:center;gap:7px;font-size:23px;letter-spacing:-.07em}
+#rg-research-root .rg-word .an-word-action,#rg-research-root .rg-word .an-word-network{color:#fff;font-weight:900}
+#rg-research-root .rg-word .an-word-network{color:#8cf0b7}
+#rg-research-root .an-word-check{display:grid;place-items:center;background:#00bd70;color:#07180e;border-radius:50%;width:25px;height:25px;font-size:17px;letter-spacing:0;font-weight:900}
+#rg-research-root .rg-stats{border-radius:13px;overflow:hidden;gap:1px}
+#rg-research-root .rg-top{background:linear-gradient(115deg,#07150e 5%,#112f20 75%,#0b3a25)}
+#rg-research-root .rg-stat{background:#12291c}
+#rg-research-root .rg-stat strong{color:#91e6b7}
+#rg-research-root .rg-section h2{letter-spacing:-.025em}
+#rg-research-root .rg-finding,#rg-research-root .rg-tablebox,#rg-research-root .rg-riskframe{border-radius:13px;overflow:hidden}
+#rg-research-root .rg-finding:first-of-type{background:linear-gradient(115deg,#0c1c16,#123424);border-color:#0c1c16;border-left-color:#00bd70}
+#rg-research-root .rg-table th{background:#102e21;border-color:#28523a;line-height:1.4;min-width:90px}
+#rg-research-root .rg-table tbody tr:first-child{background:#e5f8ed}
+#rg-research-root .rg-table tbody tr:first-child .rg-rank{color:#065e3d}
+#rg-research-root .rg-table.rg-wide{min-width:1190px}
+#rg-research-root .rg-table td{white-space:nowrap}
+#rg-research-root .rg-table td.rg-city{min-width:155px}
+#rg-research-root .rg-table .rg-rank{font-size:19px;min-width:80px}
+#rg-research-root .rg-table .rg-info{color:#7ee3ad}
+#rg-research-root .rg-table .rg-sort:focus-visible{outline:2px solid #00bd70}
+#rg-research-root .rg-tablefoot{background:#f8fcf9}
+#rg-research-root .rg-smallword{color:#0c1c16}
+#rg-research-root .rg-smallword em{font-style:normal;color:#087d50}
+#rg-research-root .rg-riskhead{background:#102e21}
+#rg-research-root .rg-chartscroll{border-radius:8px}
+#rg-research-root .rg-chartlegend{padding:0 4px 13px}
+#rg-research-root .rg-export{border-radius:8px}
+#rg-research-root .rg-nav button{border-radius:7px}
+#rg-research-root .rg-nav button:hover,#rg-research-root .rg-nav button.rg-active{background:#102e21;border-color:#102e21}
+#rg-research-root .rg-return button{border-radius:8px}
+#rg-research-root .rg-methodrow h3{color:#0c1c16}
+#rg-research-root .rg-note{border-left-color:#00bd70}
+@media(max-width:650px){#rg-research-root .rg-word{font-size:18px}#rg-research-root .an-word-check{width:20px;height:20px;font-size:14px}#rg-research-root .rg-table.rg-wide{min-width:1130px}}
+/* Compact editorial copy */
+#rg-research-root .rg-finding{padding-block:17px}
+#rg-research-root .rg-fbody p{margin-top:7px;line-height:1.48}
+#rg-research-root .rg-shortmethod .rg-methodrow{padding:12px 0}
+#rg-research-root .rg-shortmethod .rg-methodrow p{line-height:1.55}
+#rg-research-root .rg-section .rg-sub{margin-bottom:16px}
+
+/* City details stay inside this graph, never fixed across the page. */
+#rg-research-root .rg-chartarea{position:relative}
+#rg-research-root .rg-bubble-pop{position:absolute;z-index:15;width:min(374px,calc(100% - 24px));max-width:calc(100% - 24px);max-height:none;overflow-y:auto;border-radius:12px;box-shadow:0 16px 38px rgba(8,38,25,.18);scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb}
+#rg-research-root .rg-pophead{padding:12px 14px 10px}
+#rg-research-root .rg-pophead strong{font-size:20px}
+#rg-research-root .rg-poplist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:10px 12px 12px}
+#rg-research-root .rg-poplist li{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:10px 11px;border:1px solid #dfefe5;border-radius:7px;background:#f8fcfa}
+#rg-research-root .rg-popicon{display:none}
+#rg-research-root .rg-poplabel{font-size:12px;line-height:1.25;color:#315a45}
+#rg-research-root .rg-popsub{display:none}
+#rg-research-root .rg-popvalue{margin-top:auto;font-size:21px;line-height:1.1}
+@media(max-width:700px){
+ #rg-research-root .rg-bubble-pop{position:relative;inset:auto!important;width:100%;max-width:100%;max-height:none!important;margin-top:12px;box-shadow:0 6px 20px rgba(8,38,25,.10)}
+ #rg-research-root .rg-poplist{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:390px){#rg-research-root .rg-popvalue{font-size:19px}}
+
+/* Compact context for the standalone CMS research widget. */
+#rg-research-root .an-short-intro{background:#fff;border-bottom:1px solid #dbece2}
+#rg-research-root .an-short-intro .rg-wrap{padding-block:18px}
+#rg-research-root .an-short-intro p{font-size:clamp(15px,1.3vw,17px);line-height:1.6;color:#315a45;margin:0;max-width:1050px}
+#rg-research-root .an-short-intro strong{color:#0c1c16}
+</style></head><body><div id="rg-research-root"><div class="rg-bluebar"></div>
+<header class="rg-top"><div class="rg-wrap"><div class="rg-topmeta"><div class="rg-word" aria-label="The Action Network"><span class="an-word-action">ACTION</span><span class="an-word-check" aria-hidden="true">✓</span><span class="an-word-network">NETWORK</span></div><small>Thanksgiving travel analysis · 2026</small></div>
+<div class="rg-stats">
+<div class="rg-stat"><strong class="rg-count" data-format="whole" data-value="16">16</strong><span>U.S. metros ranked</span><small>Equal weight: flight + road ranks</small></div>
+<div class="rg-stat"><strong>No. 1</strong><span>New York overall</span><small>Highest combined disruption rank</small></div>
+<div class="rg-stat"><strong class="rg-count" data-format="pct2" data-value="25.72">25.72%</strong><span>Detroit flight-delay rate</span><small>Highest historical delay rate</small></div>
+<div class="rg-stat"><strong class="rg-count" data-format="signedpct0" data-value="120">+120%</strong><span>New York peak road increase</span><small>Selected routes · 2023–2025 forecasts</small></div>
+</div></div></header>
+<nav id="rg-menu" class="rg-nav" aria-label="Research sections"><div class="rg-wrap rg-navtrack"><button data-jump="rg-findings">Key findings</button><button data-jump="rg-risk">Comparison graph</button><button data-jump="rg-full">Overall rankings</button></div></nav>
+<div class="an-short-intro"><div class="rg-wrap"><p>The Action Network’s odds experts analyzed Thanksgiving travel across major U.S. metros using historical flight-delay data and peak-road congestion forecasts, then ranked <strong>16 metros</strong> with data for both to identify the greatest combined disruption.</p></div></div>
+<section id="rg-findings" class="rg-section rg-alt"><div class="rg-wrap"><div class="rg-kicker">At a glance</div><h2>Key findings</h2>
+<article class="rg-finding"><div class="rg-fidx">01</div><div class="rg-fbody"><div class="rg-fcategory">No. 1 overall · Highest road congestion</div><h3>New York ranks No. 1 overall</h3><p><strong>20.06%</strong> of sampled flights arrived at least 15 minutes late. Peak road forecasts averaged <strong>+120%</strong> on selected routes, or 2.2× normal travel time.</p></div><strong class="rg-fnum">No. 1</strong></article>
+<article class="rg-finding"><div class="rg-fidx">02</div><div class="rg-fbody"><div class="rg-fcategory">Highest historical flight-delay rate</div><h3>Detroit leads for flight delays</h3><p><strong>25.72%</strong> of sampled flights arrived at least 15 minutes late — roughly <strong>1 in 4</strong>. Detroit ranks No. 5 overall.</p></div><strong class="rg-fnum rg-count" data-format="pct2" data-value="25.72">25.72%</strong></article>
+<article class="rg-finding"><div class="rg-fidx">03</div><div class="rg-fbody"><div class="rg-fcategory">Separate 2026 weather outlook</div><h3>Portland has the highest precipitation estimate</h3><p>AN’s odds experts estimate a <strong>75% chance</strong> of precipitation on November 26. Portland’s estimate uses weather forecasts alone.</p></div><strong class="rg-fnum rg-count" data-format="pct0" data-value="75">75%</strong></article>
+<div class="rg-return"><button data-jump="rg-menu">↑ Back to Menu</button></div></div></section>
+
+<section id="rg-risk" class="rg-section"><div class="rg-wrap"><div class="rg-kicker">Compare the cities</div><h2>Flight delays vs. road congestion</h2><p class="rg-sub">Historical flight-delay rates vs. forecast peak-route travel-time increases.</p>
+<div class="rg-riskframe"><div class="rg-riskhead"><b>Flight and road comparison</b><small>Flights: 2021–2025 · Road forecasts: 2023–2025 · Weather: 2026</small><button class="rg-export" data-export="scatter-png">Download graph PNG</button></div>
+<div class="rg-riskgrid"><div class="rg-chartarea"><div class="rg-chartlegend"><span class="rg-legendbubbles" aria-hidden="true"><i></i><i></i><i></i></span><span>Bubble size = AN 2026 precipitation estimate</span><span><strong>Click or tap a circle for city details</strong></span></div><div class="rg-chartscroll" id="rg-chartscroll"><svg id="rg-scatter" viewBox="0 0 960 485" role="img" aria-label="Interactive chart of historical flight delay rates and forecast peak road travel-time increases for 16 metros. Bubble size shows separate 2026 precipitation estimates. Click or tap a circle for details."></svg></div><div id="rg-bubble-pop" class="rg-bubble-pop" role="dialog" aria-label="Selected metro travel statistics" aria-modal="false" hidden></div></div></div></div>
+<div class="rg-return"><button data-jump="rg-menu">↑ Back to Menu</button></div></div></section>
+<section id="rg-full" class="rg-section"><div class="rg-wrap"><div class="rg-kicker">Overall rankings</div><h2>Thanksgiving travel disruption rankings</h2><p class="rg-sub">Overall ranks give <strong>equal weight to historical flight-delay ranks and average forecast peak-road-congestion ranks</strong>. Weather estimates do not affect the rankings.</p>
+<div class="rg-fullcontrols"><div class="rg-field"><label for="rg-search">Find a metro</label><input id="rg-search" type="search" placeholder="Search city" autocomplete="off"></div><div class="rg-field"><label id="rg-filter-label">Sort by</label><button id="rg-filter-trigger" class="rg-select-trigger" data-listbox="filter" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="rg-filter-label"><span>Overall ranking</span><span class="rg-chevron">⌄</span></button></div><div class="rg-actions"><button class="rg-export rg-outline" data-export="full-csv">Download CSV</button><button class="rg-export" data-export="full-png">Download table PNG</button></div></div>
+<div class="rg-tablebox"><div class="rg-tabletool"><span><b id="rg-full-count">16 ranked metros</b> · <span id="rg-sort-status">Sorted by overall rank</span> · Tap ⓘ for definitions</span><div class="rg-tablearrows" data-arrows="full"><button aria-label="Scroll results left" data-scroll="-1">‹</button><button aria-label="Scroll results right" data-scroll="1">›</button></div></div><div id="rg-full-scroll" class="rg-scroll" tabindex="0" aria-label="Scrollable metro results"><table class="rg-table rg-wide" id="rg-full-table" aria-label="Equal-weight flight and road disruption ranking for 16 U.S. metropolitan areas"><thead><tr>
+<th class="rg-num rg-rankcol"><div class="rg-thgroup"><button class="rg-sort" data-sort="rank">Overall rank<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Overall ranking definition" data-help="Each city receives a flight-delay rank and a road-congestion rank. Their average determines the overall position (50% each). Lower average = higher overall placement; ties share positions."><i>i</i></button></div></th>
+<th class="rg-text rg-citycol"><div class="rg-thgroup"><button class="rg-sort" data-sort="city">Metropolitan area<span class="rg-sortdir"> ↕</span></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="flight">AN historical flight delay (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Flight probability definition" data-help="Historical share of operated flights departing selected metro airports that arrived 15 minutes or more late during Thanksgiving travel periods in 2021–2025. Canceled and diverted flights are excluded; this is not a 2026 flight forecast."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="one">Approx. flights delayed<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="One-in-X definition" data-help="Historical late-arrival rate expressed as approximately 1 in X flights. X is rounded to a whole number."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="avgDelay">Avg. flight delay (min)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Average flight delay definition" data-help="Average positive arrival-delay minutes across all operated flights in the 2021–2025 Thanksgiving samples. On-time and early arrivals contribute zero minutes."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="road">Peak road travel-time increase (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Average peak road congestion definition" data-help="Average forecast increase in peak travel time on selected routes versus normal travel time, based on AAA/INRIX Thanksgiving forecasts (2023–2025). Philadelphia uses 2024–2025 only. Not a citywide average."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="multiple">Journey time vs. normal<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Journey-time multiplier definition" data-help="Equivalent journey-time multiplier for the selected forecast routes. A +120% increase equals 2.2 times the usual travel time (30 minutes becomes 66 minutes)."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="rain">AN precipitation estimate (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Precipitation chance definition" data-help="Separate estimate developed by The Action Network’s odds experts for November 26, 2026, using weather forecasts and available prediction-market pricing. Portland uses weather forecasts only. Not included in travel rankings and not a flight- or road-delay probability."><i>i</i></button></div></th></tr></thead><tbody id="rg-full-body"></tbody></table></div>
+<div class="rg-tablefoot"><span id="rg-full-range">Showing 1–16 of 16</span><div class="rg-pager"><button id="rg-prev-page" aria-label="Previous results page">‹ Prev</button><span id="rg-page-state">1 of 1</span><button id="rg-next-page" aria-label="Next results page">Next ›</button></div><span class="rg-smallword">ACTION <em>NETWORK</em></span></div></div>
+<div class="rg-return"><button data-jump="rg-menu">↑ Back to Menu</button></div></div></section>
+<div id="rg-popup" class="rg-overlay" role="listbox" aria-label="Options" hidden></div><div id="rg-tooltip" class="rg-tooltip" role="tooltip" hidden></div>
+</div><script>(function(){'use strict';
+const root=document.getElementById('rg-research-root');if(!root)return;
+try{if(window.self!==window.top)root.classList.add('rg-framed');}catch(_){root.classList.add('rg-framed');}
+const data=[{"rank":1,"city":"New York","flight":0.2006,"one":"1 in 5","avgDelay":13.58,"road":1.2,"rain":0.633925,"forecastOnly":false,"multiple":2.2},{"rank":2,"city":"Washington, D.C.","flight":0.1918,"one":"1 in 5","avgDelay":12.7,"road":1.19,"rain":0.6320416667,"forecastOnly":false,"multiple":2.19},{"rank":3,"city":"Philadelphia","flight":0.1922,"one":"1 in 5","avgDelay":15.26,"road":0.735,"rain":0.683625,"forecastOnly":false,"multiple":1.735},{"rank":3,"city":"Boston","flight":0.1791,"one":"1 in 6","avgDelay":12.77,"road":0.93,"rain":0.629575,"forecastOnly":false,"multiple":1.93},{"rank":5,"city":"Detroit","flight":0.2572,"one":"1 in 4","avgDelay":19.65,"road":0.4067,"rain":0.6057021475,"forecastOnly":false,"multiple":1.4067},{"rank":6,"city":"Seattle","flight":0.1763,"one":"1 in 6","avgDelay":10.43,"road":0.89,"rain":0.7462666667,"forecastOnly":false,"multiple":1.89},{"rank":7,"city":"Chicago","flight":0.2314,"one":"1 in 4","avgDelay":19.77,"road":0.4,"rain":0.4303379912,"forecastOnly":false,"multiple":1.4},{"rank":8,"city":"Tampa","flight":0.1782,"one":"1 in 6","avgDelay":12.36,"road":0.6333,"rain":0.199975,"forecastOnly":false,"multiple":1.6333},{"rank":8,"city":"Los Angeles","flight":0.1401,"one":"1 in 7","avgDelay":10.07,"road":1.1533,"rain":0.140125,"forecastOnly":false,"multiple":2.1533},{"rank":10,"city":"Denver","flight":0.1863,"one":"1 in 5","avgDelay":11.68,"road":0.45,"rain":0.03441705826,"forecastOnly":false,"multiple":1.45},{"rank":11,"city":"Minneapolis","flight":0.1948,"one":"1 in 5","avgDelay":15.04,"road":0.38,"rain":0.56271875,"forecastOnly":false,"multiple":1.38},{"rank":11,"city":"Atlanta","flight":0.1742,"one":"1 in 6","avgDelay":10.79,"road":0.4833,"rain":0.226075,"forecastOnly":false,"multiple":1.4833},{"rank":13,"city":"San Diego","flight":0.1689,"one":"1 in 6","avgDelay":11.75,"road":0.47,"rain":0.1643655489,"forecastOnly":false,"multiple":1.47},{"rank":13,"city":"San Francisco","flight":0.1317,"one":"1 in 8","avgDelay":8.8,"road":0.8833,"rain":0.4717601636,"forecastOnly":false,"multiple":1.8833},{"rank":15,"city":"Portland, Oregon","flight":0.1399,"one":"1 in 7","avgDelay":8.97,"road":0.44,"rain":0.75,"forecastOnly":true,"multiple":1.44},{"rank":16,"city":"Houston","flight":0.157,"one":"1 in 6","avgDelay":10.2,"road":0.3833,"rain":0.09648266612,"forecastOnly":false,"multiple":1.3833}];
+const $=s=>root.querySelector(s),$$=s=>Array.from(root.querySelectorAll(s));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pct=(v,d=2)=>(v*100).toFixed(d)+'%';const pnum=v=>+(v*100).toFixed(5);
+const roadPct=v=>{const n=v*100;return '+'+(Math.abs(n-Math.round(n))<0.05?String(Math.round(n)):n.toFixed(1))+'%';};
+const mins=v=>((Math.round(v*10)/10).toFixed(1)).replace('.0','')+' min';
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+const fmt=(v,k)=>{if(k==='whole')return Math.round(v).toLocaleString('en-US');if(k==='wholeunit')return Math.round(v)+' metros';if(k==='ranks')return Math.round(v)+' ranks';if(k==='pct2')return Number(v).toFixed(2)+'%';if(k==='pct0')return Math.round(Number(v))+'%';if(k==='signedpct1')return '+'+Number(v).toFixed(1)+'%';if(k==='signedpct0')return '+'+Math.round(v)+'%';return String(v)};
+const anim=new WeakMap(),seen=new WeakSet();
+function animate(el,value,first=false){if(!el)return;const old=anim.get(el);if(old)cancelAnimationFrame(old);el.dataset.value=value;const fm=v=>fmt(v,el.dataset.format||'whole');el.setAttribute('aria-label',fm(value));if(reduce.matches){el.textContent=fm(value);el._rgV=value;return;}
+ const from=first?0:(Number.isFinite(el._rgV)?el._rgV:value),start=performance.now();function frame(t){const q=Math.min(1,(t-start)/780),z=1-Math.pow(1-q,3),v=from+(value-from)*z;el.textContent=fm(v);el._rgV=v;if(q<1)anim.set(el,requestAnimationFrame(frame));else{el.textContent=fm(value);el._rgV=value;anim.delete(el);}}el.textContent=fm(from);el._rgV=from;anim.set(el,requestAnimationFrame(frame));}
+const observer=('IntersectionObserver' in window)?new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>=.18&&!seen.has(e.target)){seen.add(e.target);animate(e.target,+e.target.dataset.value,true);observer.unobserve(e.target);}}),{threshold:[0,.18,.35]}):null;
+$$('.rg-count').forEach(el=>{el._rgV=+el.dataset.value;if(observer)observer.observe(el);else{seen.add(el);animate(el,+el.dataset.value,true);}});
+function updateCount(el,n){el.dataset.value=n;el.setAttribute('aria-label',fmt(n,el.dataset.format));if(seen.has(el))animate(el,n);else{el.textContent=fmt(n,el.dataset.format);el._rgV=n;}}
+const PAGE_SIZE=16; let selected=null,activeFilter='all',page=0,sortKey='rank',sortDir=1,filtered=[];
+const svg=$('#rg-scatter');
+function selectCity(r){if(!r)return;selected=r;drawGraph();}
+const bubblePop=$('#rg-bubble-pop');let bubbleCity=null,bubbleAnchor=null;
+const bubbleIcons={rank:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14M6 17V9h5v8M13 17V4h5v13M4 20h16"/></svg>',flight:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 21 3.4-8.2L2 8.4l2.1-1.1 6.1 2.6 4.4-6.6a2.7 2.7 0 0 1 4.4 3.1l-6.6 4.4 2.6 6.1-1.1 2.1-4.4-4.4z"/></svg>',road:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 16 1.4-6.1A2 2 0 0 1 9.3 8h5.4a2 2 0 0 1 1.9 1.9L18 16M4.5 16h15v3h-15zM7 19v2m10-2v2M7 16l1-3h8l1 3M5.5 12H3m18 0h-2.5"/></svg>',rain:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16a4 4 0 0 1-.7-7.9 6 6 0 0 1 11.4.3A3.8 3.8 0 1 1 18 16H6zM8 19l-1 2m6-2-1 2m6-2-1 2"/></svg>'};
+function closeBubble(){bubblePop.hidden=true;bubbleCity=null;bubbleAnchor=null;}
+function positionBubble(){
+ if(bubblePop.hidden||!bubbleAnchor||!bubbleAnchor.isConnected)return;
+ const area=$('.rg-chartarea'),chart=$('#rg-chartscroll'),ar=area.getBoundingClientRect(),sc=chart.getBoundingClientRect(),r=bubbleAnchor.getBoundingClientRect();
+ if(r.right<sc.left-5||r.left>sc.right+5||r.bottom<sc.top-5||r.top>sc.bottom+5){closeBubble();return;}
+ // Small screens: an ordinary in-flow details panel below the chart.
+ if(window.matchMedia('(max-width:700px)').matches){
+  bubblePop.style.left='';bubblePop.style.top='';bubblePop.style.maxHeight='';bubblePop.style.visibility='visible';return;
+ }
+ // Desktop: anchor inside the chart's own box, rather than to the browser viewport.
+ const margin=12,gap=12;
+ bubblePop.style.visibility='hidden';bubblePop.style.left='0px';bubblePop.style.top='0px';
+ bubblePop.style.maxHeight=Math.max(180,area.clientHeight-margin*2)+'px';
+ const w=bubblePop.offsetWidth,h=bubblePop.offsetHeight;
+ const availableRight=ar.right-r.right,availableLeft=r.left-ar.left;
+ const rawLeft=availableRight>=w+gap||availableRight>=availableLeft?r.right-ar.left+gap:r.left-ar.left-w-gap;
+ const left=Math.max(margin,Math.min(area.clientWidth-w-margin,rawLeft));
+ const rawTop=r.top-ar.top+r.height/2-h/2;
+ const top=Math.max(margin,Math.min(area.clientHeight-h-margin,rawTop));
+ bubblePop.style.left=Math.round(left)+'px';bubblePop.style.top=Math.round(top)+'px';
+ bubblePop.style.visibility='visible';
+}
+function openBubble(r,focus=false,anchorKind='circle'){if(!r)return;const was=bubbleCity===r.city&&!bubblePop.hidden;if(was){closeBubble();return;}selected=r;drawGraph();bubbleAnchor=Array.from(svg.querySelectorAll('g[data-city]')).find(g=>g.dataset.city===r.city);bubbleCity=r.city;
+ const roadMult=1+r.road;const rows=[['rank','Overall disruption rank','No. '+r.rank,'50% flight rank + 50% road rank'],['flight','Historical flight-delay rate',pct(r.flight),'2021–2025'],['flight','Avg. arrival delay',mins(r.avgDelay),'Across all operated flights'],['road','Peak road-time increase',roadPct(r.road),'Forecast selected routes'],['road','Journey time vs. normal',roadMult.toFixed(2)+'×','Typical journey time'],['rain','AN precipitation estimate',pct(r.rain),r.forecastOnly?'Forecast only':'Forecast + market']];
+ bubblePop.innerHTML='<div class="rg-pophead"><strong>'+esc(r.city)+'</strong><button class="rg-popclose" type="button" aria-label="Close city details">×</button></div><ul class="rg-poplist">'+rows.map(([kind,label,val,detail])=>'<li><span class="rg-popicon">'+bubbleIcons[kind]+'</span><span class="rg-poplabel">'+label+'<small class="rg-popsub">'+detail+'</small></span><strong class="rg-popvalue">'+val+'</strong></li>').join('')+'</ul>';
+ bubblePop.hidden=false;positionBubble();if(bubbleAnchor)bubbleAnchor.focus({preventScroll:true});}
+function drawGraph(){const X=82,Y=420,W=828,H=360,x=v=>X+(v/130)*W,y=v=>Y-(v-10)/18*H;let s='<rect width="960" height="485" fill="transparent"/>';
+ for(let k=0;k<=125;k+=25){let p=x(k);s+=`<line x1="${p}" y1="${Y-H}" x2="${p}" y2="${Y}" stroke="#dbece2"/><text x="${p}" y="${Y+26}" text-anchor="middle" fill="#53695c" font-size="15" font-family="Arial">${k}%</text>`;}
+ for(let k=12;k<=28;k+=4){let p=y(k);s+=`<line x1="${X}" y1="${p}" x2="${X+W}" y2="${p}" stroke="#dbece2"/><text x="${X-13}" y="${p+5}" text-anchor="end" fill="#53695c" font-size="15" font-family="Arial">${k}%</text>`;}
+ s+=`<text x="${X+W/2}" y="475" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#0c1c16">Forecast peak road time increase (%)</text><text transform="translate(24,240) rotate(-90)" text-anchor="middle" font-size="17" font-family="Arial" font-weight="700" fill="#0c1c16">Historical flight delay rate (%)</text><rect x="${X}" y="${Y-H}" width="${W}" height="${H}" stroke="#9dbdac" fill="none"/>`;
+ if(selected){const sx=x(selected.road*100),sy=y(selected.flight*100);s+=`<line x1="${sx}" x2="${sx}" y1="${sy}" y2="${Y}" stroke="#087d50" opacity=".35" stroke-dasharray="6 6"/><line x1="${X}" x2="${sx}" y1="${sy}" y2="${sy}" stroke="#087d50" opacity=".35" stroke-dasharray="6 6"/>`; }
+ [...data].sort((a,b)=>selected?(a.city===selected.city?1:b.city===selected.city?-1:0):0).forEach(r=>{const a=x(r.road*100),b=y(r.flight*100),sel=!!selected&&r.city===selected.city,radius=7+Math.sqrt(r.rain)*9,opacity=(.46+.47*r.rain).toFixed(2),label=esc(r.city);s+=`<g tabindex="0" role="button" data-city="${label}" aria-label="View ${label}: historical flight delay rate ${pct(r.flight)}, road time increase ${pct(r.road)}, precipitation estimate ${pct(r.rain)}" style="cursor:pointer"><circle cx="${a}" cy="${b}" r="${radius+4}" fill="${sel?'#0c1c16':'#00bd70'}" opacity="${sel?1:opacity}" stroke="${sel?'#0c1c16':'#fff'}" stroke-width="${sel?3:2}"/><title>${label} · Flight delay ${pct(r.flight)} · Road +${pct(r.road)} · Weather ${pct(r.rain)}</title></g>`;
+
+ });svg.innerHTML=s;}
+// Accessible custom dropdowns contained within this widget
+const popup=$('#rg-popup'),filterTrigger=$('#rg-filter-trigger'),cityTrigger=$('#rg-city-trigger');
+const filters=[['all','Overall ranking'],['flight','Flight delay leaders'],['road','Road congestion leaders'],['rain','Precipitation leaders']];let openTrigger=null,opts=[],active=0;
+function closePopup(){if(openTrigger){openTrigger.setAttribute('aria-expanded','false');openTrigger.removeAttribute('aria-activedescendant');openTrigger=null;}popup.hidden=true;}
+function positionPopup(){if(!openTrigger)return;let r=openTrigger.getBoundingClientRect(),max=Math.min(308,opts.length*45+4),below=innerHeight-r.bottom-9,above=r.top-9,flip=below<Math.min(max,165)&&above>below;let h=Math.max(40,Math.min(max,flip?above:below)),w=Math.min(r.width,innerWidth-16);popup.style.width=w+'px';popup.style.maxHeight=h+'px';popup.style.left=Math.max(8,Math.min(r.left,innerWidth-w-8))+'px';popup.style.top=(flip?Math.max(8,r.top-h-2):Math.min(innerHeight-h-8,r.bottom+2))+'px';}
+function renderOptions(){popup.innerHTML=opts.map((v,i)=>`<button type="button" id="rg-option-${i}" data-option="${i}" role="option" aria-selected="${i===active}" class="rg-option ${i===active?'rg-hover':''}">${esc(v[1])}${i===active?' ✓':''}</button>`).join('');openTrigger.setAttribute('aria-activedescendant','rg-option-'+active);const target=popup.querySelector('.rg-hover');if(target)target.scrollIntoView({block:'nearest',behavior:'instant'});}
+function openPopup(trigger){closePopup();openTrigger=trigger;opts=filters;active=Math.max(0,opts.findIndex(v=>v[0]===activeFilter));trigger.setAttribute('aria-expanded','true');popup.hidden=false;renderOptions();positionPopup();}
+function chooseOption(i){if(!openTrigger||!opts[i])return;const val=opts[i][0];closePopup();activeFilter=val;filterTrigger.querySelector('span:first-child').textContent=filters.find(v=>v[0]===val)[1];sortKey=val==='all'?'rank':val;sortDir=val==='all'?1:-1;page=0;renderTable();}
+function comboKeyboard(e){let t=e.target.closest('[data-listbox]');if(!t)return;const keys=['ArrowDown','ArrowUp','Home','End','Enter',' ','Escape'];if(keys.includes(e.key)){e.preventDefault();if(e.key==='Escape'){closePopup();return;}if(!openTrigger)openPopup(t);if(e.key==='ArrowDown')active=Math.min(opts.length-1,active+1);if(e.key==='ArrowUp')active=Math.max(0,active-1);if(e.key==='Home')active=0;if(e.key==='End')active=opts.length-1;if(['Enter',' '].includes(e.key)){chooseOption(active);return;}renderOptions();}else if(openTrigger&&e.key.length===1&&!e.altKey&&!e.ctrlKey){let i=opts.findIndex((v,j)=>j>active&&v[1].toLowerCase().startsWith(e.key.toLowerCase()));active=i<0?Math.max(0,opts.findIndex(v=>v[1].toLowerCase().startsWith(e.key.toLowerCase()))):i;renderOptions();}}
+function results(){let search=$('#rg-search').value.trim().toLowerCase();return data.filter(r=>!search||r.city.toLowerCase().includes(search)).sort((a,b)=>{let comp=sortKey==='city'?a.city.localeCompare(b.city):sortKey==='one'?(1/a.flight-1/b.flight):a[sortKey]-b[sortKey];return comp*sortDir||(sortKey==='rank'?data.indexOf(a)-data.indexOf(b):a.city.localeCompare(b.city));});}
+function updateArrows(){const sc=$('#rg-full-scroll');let limit=sc.scrollWidth-sc.clientWidth;const holder=$('[data-arrows="full"]');holder.querySelector('[data-scroll="-1"]').disabled=sc.scrollLeft<=2;holder.querySelector('[data-scroll="1"]').disabled=sc.scrollLeft>=limit-2;}
+function renderTable(){filtered=results();let pages=Math.max(1,Math.ceil(filtered.length/PAGE_SIZE));page=Math.min(page,pages-1);let start=page*PAGE_SIZE,shown=filtered.slice(start,start+PAGE_SIZE);$('#rg-full-body').innerHTML=shown.length?shown.map(r=>`<tr><td class="rg-num rg-rank">${r.rank}${data.some(other=>other!==r&&other.rank===r.rank)?"=":""}</td><td class="rg-city">${esc(r.city)}</td><td class="rg-num">${pct(r.flight)}</td><td class="rg-num">${esc(r.one)}</td><td class="rg-num">${mins(r.avgDelay)}</td><td class="rg-num">${roadPct(r.road)}</td><td class="rg-num">${r.multiple.toFixed(2)}×</td><td class="rg-num">${pct(r.rain)}${r.forecastOnly?' *':''}</td></tr>`).join(''):'<tr><td colspan="8" style="text-align:center;padding:24px">No matching metros.</td></tr>';
+ $('#rg-full-count').textContent=filtered.length+' '+(filtered.length===1?'metro':'metros');const sortNames={rank:'overall rank',flight:'flight delay probability',road:'road congestion',rain:'precipitation probability',avgDelay:'average flight delay',multiple:'peak journey time',one:'approximate flights delayed',city:'city name'};$('#rg-sort-status').textContent='Sorted by '+(sortNames[sortKey]||'selected measure')+(sortKey==='rank'?'':(sortDir===-1?' (highest first)':' (lowest first)'));$('#rg-full-range').textContent=filtered.length?`Showing ${start+1}–${Math.min(start+PAGE_SIZE,filtered.length)} of ${filtered.length}`:'Showing 0 of 0';$('#rg-page-state').textContent=`${page+1} of ${pages}`;$('#rg-prev-page').disabled=page===0;$('#rg-next-page').disabled=page>=pages-1;
+ $$('.rg-sort').forEach(b=>{b.querySelector('span').textContent=b.dataset.sort===sortKey?(sortDir===1?' ↑':' ↓'):' ↕';b.closest('th').setAttribute('aria-sort',b.dataset.sort===sortKey?(sortDir===1?'ascending':'descending'):'none');});requestAnimationFrame(updateArrows);}
+const saveBlob=(blob,name)=>{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;root.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);};
+function csvExport(){const columns=['Overall rank','Metropolitan area','AN historical flight-delay rate (%)','Approx. flights delayed','Avg. arrival delay (min)','Forecast peak road-time increase (%)','Journey time vs. normal (x)','AN 2026 precipitation estimate (%)','Weather estimate basis'];const q=v=>'"'+String(v).replace(/"/g,'""')+'"';const lines=[columns.map(q).join(','),...filtered.map(r=>[r.rank,q(r.city),pnum(r.flight),q(r.one),+(Math.round(r.avgDelay*100)/100),pnum(r.road),r.multiple,pnum(r.rain),q(r.forecastOnly?'Forecast only':'Forecast + market')].join(','))];saveBlob(new Blob(['\ufeff'+lines.join('\r\n')+'\r\n'],{type:'text/csv;charset=utf-8'}),'Action_Network_Thanksgiving_Travel_Sorted_Rankings.csv');}
+// Offline high-resolution chart/table exports. No dependencies or captured browser UI.
+function canvasBase(title,sub,W=2800,H=1550){let c=document.createElement('canvas');c.width=W;c.height=H;let a=c.getContext('2d');a.fillStyle='#fff';a.fillRect(0,0,W,H);a.fillStyle='#0c1c16';a.fillRect(0,0,W,182);a.fillStyle='#00bd70';a.fillRect(0,182,W,8);a.font='900 52px Arial';a.fillStyle='#fff';a.fillText('ACTION',102,83);a.fillStyle='#92f0bd';a.fillText('NETWORK',342,83);a.fillStyle='#b9cce4';a.font='26px Arial';a.fillText('Thanksgiving travel research',103,137);a.fillStyle='#0c1c16';a.font='900 57px Arial';a.fillText(title,103,275);a.fillStyle='#50665a';a.font='28px Arial';a.fillText(sub,103,324);return[c,a];}
+function footer(c,a,msg){a.fillStyle='#ebf9f1';a.fillRect(0,c.height-107,c.width,107);a.fillStyle='#00bd70';a.fillRect(0,c.height-107,10,107);a.fillStyle='#50665a';a.font='25px Arial';a.textAlign='left';a.fillText(msg,104,c.height-52);a.fillStyle='#087d50';a.textAlign='right';a.font='800 27px Arial';a.fillText('THE ACTION NETWORK',c.width-102,c.height-52);a.textAlign='left';}
+function saveCanvas(c,name){c.toBlob(blob=>{if(blob)saveBlob(blob,name);},'image/png');}
+function graphPng(){
+ if(!selected){window.alert('Please select a city on the graph first, then download the image.');return;}
+ const roundRect=(ctx,x,y,w,h,r)=>{ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();};
+ // A separate premium summary occupies the space ABOVE the plot, not the plotted data.
+ const W=3200,H=2280,L=330,R=2880,T=935,B=1925;
+ const [c,a]=canvasBase('Thanksgiving travel: 16 U.S. metros','Historical flight delays vs. forecast road congestion  ·  Bubble size = separate 2026 weather estimate',W,H);
+ const x=v=>L+v/130*(R-L),y=v=>B-(v-10)/18*(B-T);
+
+ // Premium selected-metro panel, two columns and three roomy rows.
+ const bx=L,by=378,bw=R-L,bh=480;
+ a.save();a.shadowColor='rgba(12,45,28,.18)';a.shadowBlur=32;a.shadowOffsetY=14;
+ roundRect(a,bx,by,bw,bh,24);a.fillStyle='#102d21';a.fill();a.restore();
+ a.save();roundRect(a,bx,by,bw,bh,24);a.clip();
+ const grad=a.createLinearGradient(bx,by,bx+bw,by+bh);
+ grad.addColorStop(0,'#102d21');grad.addColorStop(.72,'#123728');grad.addColorStop(1,'#153c2b');
+ a.fillStyle=grad;a.fillRect(bx,by,bw,bh);
+ a.fillStyle='#00bd70';a.fillRect(bx,by,bw,7);
+ // Subtle column and row dividers, allowing each reading to breathe.
+ a.strokeStyle='rgba(169,242,204,.22)';a.lineWidth=2;
+ a.beginPath();a.moveTo(bx+bw/2,by+35);a.lineTo(bx+bw/2,by+bh-35);a.stroke();
+ for(const yy of [by+151,by+290]){a.beginPath();a.moveTo(bx+44,yy);a.lineTo(bx+bw/2-44,yy);a.moveTo(bx+bw/2+44,yy);a.lineTo(bx+bw-44,yy);a.stroke();}
+ a.restore();
+ const metrics=[
+  ['Overall rank','No. '+selected.rank],
+  ['Historical flight-delay rate',pct(selected.flight)],
+  ['Avg. arrival delay',mins(selected.avgDelay)],
+  ['Forecast road-time increase',roadPct(selected.road)],
+  ['Journey time vs. normal',(1+selected.road).toFixed(2)+'×'],
+  ['AN precipitation estimate',pct(selected.rain)]
+ ];
+ const cx=[bx+68,bx+bw/2+68],rowBase=by+77,rowStep=138;
+ a.textAlign='left';a.textBaseline='alphabetic';
+ metrics.forEach((m,i)=>{
+  const col=i<3?0:1,row=i%3,xx=cx[col],labelY=rowBase+row*rowStep;
+  a.fillStyle='#b8d7c9';a.font='700 30px Arial';a.fillText(m[0],xx,labelY);
+  a.fillStyle='#8bf0bd';a.font='900 59px Arial';a.fillText(m[1],xx,labelY+63);
+ });
+
+ // Chart remains completely unobstructed below the selected-metro panel.
+ a.font='26px Arial';a.fillStyle='#52685d';a.strokeStyle='#dbece2';a.lineWidth=2;
+ for(let k=0;k<=125;k+=25){const p=x(k);a.beginPath();a.moveTo(p,T);a.lineTo(p,B);a.stroke();a.textAlign='center';a.fillText(k+'%',p,B+43);}
+ for(let k=12;k<=28;k+=4){const p=y(k);a.beginPath();a.moveTo(L,p);a.lineTo(R,p);a.stroke();a.textAlign='right';a.fillText(k+'%',L-23,p+10);}
+ a.strokeStyle='#9dbdac';a.lineWidth=2;a.strokeRect(L,T,R-L,B-T);
+ const sx=x(selected.road*100),sy=y(selected.flight*100);
+ a.save();a.setLineDash([10,10]);a.strokeStyle='rgba(8,125,80,.3)';a.lineWidth=3;a.beginPath();a.moveTo(sx,sy);a.lineTo(sx,B);a.moveTo(L,sy);a.lineTo(sx,sy);a.stroke();a.restore();
+ [...data].sort((p,q)=>p.city===selected.city?1:q.city===selected.city?-1:0).forEach(r=>{
+  const px=x(r.road*100),py=y(r.flight*100),rad=15+Math.sqrt(r.rain)*27,sel=r.city===selected.city;
+  a.beginPath();a.arc(px,py,rad,0,Math.PI*2);a.fillStyle=sel?'#0c1c16':'#00bd70';
+  a.globalAlpha=sel?1:.43+.47*r.rain;a.fill();a.globalAlpha=1;
+  a.strokeStyle=sel?'#0c1c16':'#fff';a.lineWidth=sel?4:3;a.stroke();
+ });
+ // The selected city is labelled only next to its circle—no border or duplicate heading.
+ const city=selected.city;a.font='900 37px Arial';const tw=a.measureText(city).width;
+ let tx=sx>R-480?sx-tw-43:sx+43;
+ tx=Math.max(L+9,Math.min(R-tw-9,tx));
+ let ty=sy-27;
+ if(ty<T+40)ty=sy+57;
+ if(ty>B-15)ty=sy-40;
+ a.save();a.textAlign='left';a.textBaseline='alphabetic';a.lineWidth=8;a.lineJoin='round';
+ a.strokeStyle='rgba(255,255,255,.96)';a.strokeText(city,tx,ty);a.fillStyle='#0c1c16';a.fillText(city,tx,ty);a.restore();
+ a.fillStyle='#0c1c16';a.font='800 33px Arial';a.textAlign='center';
+ a.fillText('Forecast peak road travel-time increase (%)',(L+R)/2,B+121);
+ a.save();a.translate(110,(T+B)/2);a.rotate(-Math.PI/2);a.fillText('Historical flight-delay rate (%)',0,0);a.restore();a.textAlign='left';
+ footer(c,a,'AN odds experts: flights 2021–2025 · road forecasts 2023–2025 · 2026 precipitation estimates are separate');
+ const safe='Action_Network_Thanksgiving_Travel_Comparison_'+city.replace(/[^a-z0-9]+/gi,'_').replace(/^_|_$/g,'')+'.png';
+ saveCanvas(c,safe);
+}
+function tablePng(){
+ const rows=filtered.slice(page*PAGE_SIZE,page*PAGE_SIZE+PAGE_SIZE),width=3000,height=Math.max(1100,575+rows.length*76+160);
+ const [c,a]=canvasBase('Thanksgiving travel disruption rankings',`Overall positions · ${rows.length} of ${filtered.length} selected metros · Flight and road ranks equally weighted`,width,height);
+ const X=[145,330,1100,1445,1715,2040,2360,2710];
+ const labels=['Rank','Metropolitan area','Flight delay','1 in X flights','Avg. delay','Road +%','Journey time','AN precip.'];
+ a.fillStyle='#0c1c16';a.fillRect(93,395,2810,85);a.textBaseline='middle';a.font='800 25px Arial';a.fillStyle='#fff';
+ const cols=X;
+ labels.forEach((v,j)=>{a.textAlign=j===1?'left':'center';a.fillText(v,cols[j],438)});
+ rows.forEach((r,i)=>{const cy=480+i*76;if(i%2===0){a.fillStyle='#eef9f3';a.fillRect(93,cy,2810,76);}
+ a.strokeStyle='#dbece2';a.beginPath();a.moveTo(93,cy+76);a.lineTo(2903,cy+76);a.stroke();
+ a.font='900 33px Arial';a.fillStyle='#087d50';a.textAlign='center';a.fillText(String(r.rank)+(data.some(other=>other!==r&&other.rank===r.rank)?'=':''),X[0],cy+40);
+ a.font='800 31px Arial';a.fillStyle='#0c1c16';a.textAlign='left';a.fillText(r.city,X[1],cy+40);
+ const vals=[pct(r.flight),r.one,mins(r.avgDelay),roadPct(r.road),r.multiple.toFixed(2)+'×',pct(r.rain)+(r.forecastOnly?' *':'')];
+ vals.forEach((v,j)=>{a.font='700 29px Arial';a.fillStyle=j===0?'#087d50':'#0c1c16';a.textAlign='center';a.fillText(v,X[j+2],cy+40);});
+ });
+ a.textBaseline='alphabetic';footer(c,a,'Overall rank: 50% historic flight rank + 50% forecast road rank · AN weather estimates separate · * forecast only');
+ saveCanvas(c,'Action_Network_Thanksgiving_Rankings.png');
+}
+// Smooth travel in actual scroll owner, with reduced-motion and deep-page return.
+let scrollRaf=0;function ownerOf(el){let cur=el.parentElement;while(cur&&cur!==document.body&&cur!==document.documentElement){const s=getComputedStyle(cur);if(cur.scrollHeight>cur.clientHeight+10&&/(auto|scroll)/.test(s.overflowY))return cur;cur=cur.parentElement;}return document.scrollingElement||document.documentElement;}
+function goTo(id){let to=$('#'+id);if(!to)return;closePopup();closeBubble();hideTip();let owner=ownerOf(to),doc=owner===document.scrollingElement||owner===document.documentElement,start=owner.scrollTop,nav=$('#rg-menu'),clear=id==='rg-menu'?0:nav.getBoundingClientRect().height+12,top=id==='rg-menu'?(owner===root?$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight:start+root.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)+$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight):start+to.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)-clear,end=Math.max(0,Math.min(owner.scrollHeight-owner.clientHeight,top));if(scrollRaf)cancelAnimationFrame(scrollRaf);if(reduce.matches){owner.scrollTop=end;return;}const begin=performance.now(),delta=end-start;function frame(t){let n=Math.min(1,(t-begin)/760),ease=n<.5?4*n*n*n:1-Math.pow(-2*n+2,3)/2;owner.scrollTop=start+delta*ease;if(n<1)scrollRaf=requestAnimationFrame(frame);else{scrollRaf=0;owner.scrollTop=end;}}scrollRaf=requestAnimationFrame(frame);}
+const tip=$('#rg-tooltip');let tipTarget=null;
+function showTip(el){tipTarget=el;tip.textContent=el.dataset.help||'';tip.hidden=false;tip.classList.remove('rg-below');tip.style.visibility='hidden';let r=el.getBoundingClientRect(),t=tip.getBoundingClientRect(),left=Math.max(9,Math.min(innerWidth-t.width-9,r.left+r.width/2-t.width/2)),top=r.top-t.height-13;if(top<8){top=r.bottom+12;tip.classList.add('rg-below');}tip.style.left=left+'px';tip.style.top=Math.max(8,top)+'px';tip.style.setProperty('--rg-arrow',Math.max(12,Math.min(t.width-12,r.left+r.width/2-left))+'px');tip.style.visibility='visible';}
+function hideTip(){tip.hidden=true;tipTarget=null;}
+root.addEventListener('mouseover',e=>{let h=e.target.closest('[data-help]');if(h)showTip(h);});root.addEventListener('mouseout',e=>{let h=e.target.closest('[data-help]');if(h&&(!e.relatedTarget||!h.contains(e.relatedTarget)))hideTip();});root.addEventListener('focusin',e=>{let h=e.target.closest('[data-help]');if(h)showTip(h);});root.addEventListener('focusout',e=>{if(e.target.closest('[data-help]'))hideTip();});
+root.addEventListener('keydown',e=>{if(e.target.closest('[data-listbox]'))comboKeyboard(e);if(e.key==='Escape'){closePopup();hideTip();closeBubble();}const city=e.target.closest('#rg-scatter [data-city]');if(city&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openBubble(data.find(r=>r.city===city.dataset.city),true);}});
+root.addEventListener('click',e=>{let q=e.target.closest('[data-jump]');if(q){goTo(q.dataset.jump);return;}q=e.target.closest('#rg-scatter [data-city]');if(q){openBubble(data.find(r=>r.city===q.dataset.city));return;}q=e.target.closest('.rg-popclose');if(q){closeBubble();return;}q=e.target.closest('[data-help]');if(q){e.stopPropagation();tipTarget===q&&!tip.hidden?hideTip():showTip(q);return;}q=e.target.closest('[data-listbox]');if(q){openTrigger===q?closePopup():openPopup(q);return;}q=e.target.closest('[data-option]');if(q){chooseOption(+q.dataset.option);return;}q=e.target.closest('[data-sort]');if(q){if(sortKey===q.dataset.sort)sortDir*=-1;else{sortKey=q.dataset.sort;sortDir=['rank','city'].includes(sortKey)?1:-1;}activeFilter='custom';filterTrigger.querySelector('span:first-child').textContent='Custom column sort';page=0;renderTable();return;}if(e.target.closest('#rg-prev-page')){page=Math.max(0,page-1);renderTable();return;}if(e.target.closest('#rg-next-page')){page++;renderTable();return;}q=e.target.closest('[data-scroll]');if(q){let sc=$('#rg-full-scroll');sc.scrollBy({left:sc.clientWidth*.75*(+q.dataset.scroll),behavior:reduce.matches?'instant':'smooth'});setTimeout(updateArrows,430);return;}q=e.target.closest('[data-export]');if(q){if(q.dataset.export==='scatter-png')graphPng();if(q.dataset.export==='full-csv')csvExport();if(q.dataset.export==='full-png')tablePng();}});
+function outside(e){if(bubbleCity&&!bubblePop.contains(e.target)&&!e.target.closest('#rg-scatter [data-city]'))closeBubble();if(openTrigger&&!openTrigger.contains(e.target)&&!popup.contains(e.target))closePopup();if(tipTarget&&!tipTarget.contains(e.target)&&!tip.contains(e.target))hideTip();}
+document.addEventListener('pointerdown',outside);
+root.addEventListener('input',e=>{if(e.target.id==='rg-search'){page=0;renderTable();}});
+$('#rg-full-scroll').addEventListener('scroll',updateArrows,{passive:true});root.addEventListener('scroll',(e)=>{if(openTrigger)positionPopup();if(bubbleCity)positionBubble();hideTip();},{capture:true,passive:true});window.addEventListener('scroll',()=>{if(openTrigger)positionPopup();if(bubbleCity){const a=$('.rg-chartarea').getBoundingClientRect();if(a.bottom<0||a.top>window.innerHeight)closeBubble();else positionBubble();}hideTip();},{passive:true});window.addEventListener('resize',()=>{if(openTrigger)positionPopup();if(bubbleCity)positionBubble();hideTip();updateArrows();},{passive:true});
+drawGraph();renderTable();
+})();</script></body></html>
