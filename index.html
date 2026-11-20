@@ -312,6 +312,25 @@ html::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb,
 html::-webkit-scrollbar-thumb:hover,body::-webkit-scrollbar-thumb:hover,
 #rg-research-root::-webkit-scrollbar-thumb:hover,
 #rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay,.rg-bubble-pop)::-webkit-scrollbar-thumb:hover{background:#087d50}
+
+/* Graph header: city selector on the right, separate from the PNG button. */
+#rg-research-root .rg-riskhead{display:block}
+#rg-research-root .rg-riskheadtop,#rg-research-root .rg-riskheadactions{display:flex;align-items:center;justify-content:space-between;gap:12px 22px;flex-wrap:wrap}
+#rg-research-root .rg-riskheadtop{margin-bottom:12px}
+#rg-research-root .rg-riskheadtop small{line-height:1.45}
+#rg-research-root .rg-riskheadactions{align-items:flex-end}
+#rg-research-root .rg-riskheadactions .rg-export{width:auto;flex:0 0 auto;min-height:47px}
+#rg-research-root .rg-citychoose{flex:0 1 350px;min-width:225px;display:flex;align-items:center;gap:12px}
+#rg-research-root .rg-citychoose label{white-space:nowrap;color:#c0e7d0;font-weight:800;font-size:14px}
+#rg-research-root .rg-citychoose .rg-select-trigger{flex:1 1 auto;min-width:145px;min-height:47px;border:1px solid #4b8e6c;border-radius:8px;padding:10px 13px;background:#f6fff9;color:#102d21;box-shadow:0 2px 0 rgba(0,189,112,.20);font-size:15px;font-weight:800}
+#rg-research-root .rg-citychoose .rg-select-trigger:hover,#rg-research-root .rg-citychoose .rg-select-trigger[aria-expanded=true]{background:#e5faee;border-color:#00bd70}
+#rg-research-root .rg-citychoose .rg-chevron{color:#087d50}
+@media(max-width:650px){
+ #rg-research-root .rg-riskheadtop{align-items:flex-start}
+ #rg-research-root .rg-riskheadactions{gap:12px}
+ #rg-research-root .rg-riskheadactions .rg-export{width:100%;flex:1 1 100%}
+ #rg-research-root .rg-citychoose{width:100%;flex:1 1 100%}
+}
 </style></head><body><div id="rg-research-root"><div class="rg-bluebar"></div>
 <header class="rg-top"><div class="rg-wrap"><div class="rg-topmeta"><div class="rg-word" aria-label="The Action Network"><span class="an-word-action">ACTION</span><span class="an-word-check" aria-hidden="true">✓</span><span class="an-word-network">NETWORK</span></div><small>Thanksgiving travel analysis · 2026</small></div>
 <div class="rg-stats">
@@ -329,20 +348,28 @@ html::-webkit-scrollbar-thumb:hover,body::-webkit-scrollbar-thumb:hover,
 <div class="rg-return"><button data-jump="rg-menu">↑ Back to Menu</button></div></div></section>
 
 <section id="rg-risk" class="rg-section"><div class="rg-wrap"><div class="rg-kicker">Compare the cities</div><h2>Flight delays vs. road congestion</h2><p class="rg-sub">Historical flight-delay rates vs. forecast peak-route travel-time increases.</p>
-<div class="rg-riskframe"><div class="rg-riskhead"><b>Flight and road comparison</b><small>Flights: 2021–2025 · Road forecasts: 2023–2025 · Weather: 2026</small><button class="rg-export" data-export="scatter-png">Download graph PNG</button></div>
+<div class="rg-riskframe"><div class="rg-riskhead">
+  <div class="rg-riskheadtop"><b>Flight and road comparison</b><small>Flights: 2021–2025 · Road forecasts: 2023–2025 · Weather: 2026</small></div>
+  <div class="rg-riskheadactions">
+    <button class="rg-export" data-export="scatter-png">Download graph PNG</button>
+    <div class="rg-citychoose"><label id="rg-graph-city-label">Select a city</label>
+      <button id="rg-city-trigger" type="button" class="rg-select-trigger" data-listbox="city" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="rg-graph-city-label"><span>Choose a city</span><span class="rg-chevron" aria-hidden="true">⌄</span></button>
+    </div>
+  </div>
+</div>
 <div class="rg-riskgrid"><div class="rg-chartarea"><div class="rg-chartlegend"><span class="rg-legendbubbles" aria-hidden="true"><i></i><i></i><i></i></span><span>Bubble size = AN 2026 precipitation estimate</span><span><strong>Click or tap a circle for city details</strong></span></div><div class="rg-chartscroll" id="rg-chartscroll"><svg id="rg-scatter" viewBox="0 0 960 485" role="img" aria-label="Interactive chart of historical flight delay rates and forecast peak road travel-time increases for 16 metros. Bubble size shows separate 2026 precipitation estimates. Click or tap a circle for details."></svg></div><div id="rg-bubble-pop" class="rg-bubble-pop" role="dialog" aria-label="Selected metro travel statistics" aria-modal="false" hidden></div></div></div></div>
 <div class="rg-return"><button data-jump="rg-menu">↑ Back to Menu</button></div></div></section>
 <section id="rg-full" class="rg-section"><div class="rg-wrap"><div class="rg-kicker">Overall rankings</div><h2>Thanksgiving travel disruption rankings</h2><p class="rg-sub">Overall ranks give <strong>equal weight to historical flight-delay ranks and average forecast peak-road-congestion ranks</strong>. Weather estimates do not affect the rankings.</p>
 <div class="rg-fullcontrols"><div class="rg-field"><label for="rg-search">Find a metro</label><input id="rg-search" type="search" placeholder="Search city" autocomplete="off"></div><div class="rg-field"><label id="rg-filter-label">Sort by</label><button id="rg-filter-trigger" class="rg-select-trigger" data-listbox="filter" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="rg-filter-label"><span>Overall ranking</span><span class="rg-chevron">⌄</span></button></div><div class="rg-actions"><button class="rg-export rg-outline" data-export="full-csv">Download CSV</button><button class="rg-export" data-export="full-png">Download table PNG</button></div></div>
 <div class="rg-tablebox"><div class="rg-tabletool"><span><b id="rg-full-count">16 ranked metros</b> · <span id="rg-sort-status">Sorted by overall rank</span> · Tap ⓘ for definitions</span><div class="rg-tablearrows" data-arrows="full"><button aria-label="Scroll results left" data-scroll="-1">‹</button><button aria-label="Scroll results right" data-scroll="1">›</button></div></div><div id="rg-full-scroll" class="rg-scroll" tabindex="0" aria-label="Scrollable metro results"><table class="rg-table rg-wide" id="rg-full-table" aria-label="Equal-weight flight and road disruption ranking for 16 U.S. metropolitan areas"><thead><tr>
-<th class="rg-num rg-rankcol"><div class="rg-thgroup"><button class="rg-sort" data-sort="rank">Overall rank<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Overall ranking definition" data-help="Each city receives a flight-delay rank and a road-congestion rank. Their average determines the overall position (50% each). Lower average = higher overall placement; ties share positions."><i>i</i></button></div></th>
+<th class="rg-num rg-rankcol"><div class="rg-thgroup"><button class="rg-sort" data-sort="rank">Overall rank<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Overall ranking definition" data-help="AN ranks cities using equal weight from historical flight delays and peak road travel-time increases (50% each)."><i>i</i></button></div></th>
 <th class="rg-text rg-citycol"><div class="rg-thgroup"><button class="rg-sort" data-sort="city">Metropolitan area<span class="rg-sortdir"> ↕</span></button></div></th>
-<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="flight">AN historical flight delay (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Flight probability definition" data-help="Historical share of operated flights departing selected metro airports that arrived 15 minutes or more late during Thanksgiving travel periods in 2021–2025. Canceled and diverted flights are excluded; this is not a 2026 flight forecast."><i>i</i></button></div></th>
-<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="one">Approx. flights delayed<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="One-in-X definition" data-help="Historical late-arrival rate expressed as approximately 1 in X flights. X is rounded to a whole number."><i>i</i></button></div></th>
-<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="avgDelay">Avg. flight delay (min)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Average flight delay definition" data-help="Average positive arrival-delay minutes across all operated flights in the 2021–2025 Thanksgiving samples. On-time and early arrivals contribute zero minutes."><i>i</i></button></div></th>
-<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="road">Peak road travel-time increase (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Average peak road congestion definition" data-help="Average forecast increase in peak travel time on selected routes versus normal travel time, based on AAA/INRIX Thanksgiving forecasts (2023–2025). Philadelphia uses 2024–2025 only. Not a citywide average."><i>i</i></button></div></th>
-<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="multiple">Journey time vs. normal<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Journey-time multiplier definition" data-help="Equivalent journey-time multiplier for the selected forecast routes. A +120% increase equals 2.2 times the usual travel time (30 minutes becomes 66 minutes)."><i>i</i></button></div></th>
-<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="rain">AN precipitation estimate (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Precipitation chance definition" data-help="Separate estimate developed by The Action Network’s odds experts for November 26, 2026, using weather forecasts and available prediction-market pricing. Portland uses weather forecasts only. Not included in travel rankings and not a flight- or road-delay probability."><i>i</i></button></div></th></tr></thead><tbody id="rg-full-body"></tbody></table></div>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="flight">AN historical flight delay (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Flight probability definition" data-help="AN&#39;s historical flight-delay rate: flights arriving at least 15 minutes late during Thanksgiving week, 2021–2025."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="one">Approx. flights delayed<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="One-in-X definition" data-help="AN expresses the historical flight-delay rate as approximately 1 in X flights."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="avgDelay">Avg. flight delay (min)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Average flight delay definition" data-help="Average arrival-delay minutes across Thanksgiving-week flights in 2021–2025."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="road">Peak road travel-time increase (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Average peak road congestion definition" data-help="AN averages AAA/INRIX&#39;s predicted peak travel-time increases on selected Thanksgiving routes, 2023–2025."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="multiple">Journey time vs. normal<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Journey-time multiplier definition" data-help="Peak road travel time compared with a usual trip. A +120% increase means 2.2× the normal journey time."><i>i</i></button></div></th>
+<th class="rg-num"><div class="rg-thgroup"><button class="rg-sort" data-sort="rain">AN precipitation estimate (%)<span class="rg-sortdir"> ↕</span></button><button class="rg-info" aria-label="Precipitation chance definition" data-help="AN&#39;s odds experts estimate Thanksgiving Day 2026 precipitation using weather forecasts and available prediction-market data. Not part of the ranking."><i>i</i></button></div></th></tr></thead><tbody id="rg-full-body"></tbody></table></div>
 <div class="rg-tablefoot"><span id="rg-full-range">Showing 1–16 of 16</span><div class="rg-pager"><button id="rg-prev-page" aria-label="Previous results page">‹ Prev</button><span id="rg-page-state">1 of 1</span><button id="rg-next-page" aria-label="Next results page">Next ›</button></div><span class="rg-smallword">ACTION <em>NETWORK</em></span></div></div>
 <div class="rg-return"><button data-jump="rg-menu">↑ Back to Menu</button></div></div></section>
 <div id="rg-popup" class="rg-overlay" role="listbox" aria-label="Options" hidden></div><div id="rg-tooltip" class="rg-tooltip" role="tooltip" hidden></div>
@@ -372,6 +399,20 @@ if(window.parent!==window){
  window.addEventListener('load',rgResizeHostIframe,{once:true});
  window.addEventListener('resize',rgResizeHostIframe,{passive:true});
  requestAnimationFrame(rgResizeHostIframe);
+}
+// Hosted GitHub Pages and the CMS are cross-origin. A CMS-side message listener
+// must scroll the outer page; iframe-local scrollIntoView cannot do so.
+function rgRequestHostJump(to,id){
+ if(window.parent===window)return;
+ try{
+  const offset=Math.max(0,Math.round(to.getBoundingClientRect().top+window.scrollY));
+  window.parent.postMessage({
+   type:'action-network-thanksgiving-jump',
+   frameId:'actionnetwork-thanksgiving-disruption-2026-us-cities',
+   target:id,
+   offset:offset
+  },'*');
+ }catch(_){}
 }
 // Navigation must scroll the CMS host, not an iframe enlarged to the entire report height.
 function rgScrollHostTo(to,id){
@@ -435,10 +476,16 @@ function positionBubble(){
  bubblePop.style.left=Math.round(left)+'px';bubblePop.style.top=Math.round(top)+'px';
  bubblePop.style.visibility='visible';
 }
-function openBubble(r,focus=false,anchorKind='circle'){if(!r)return;const was=bubbleCity===r.city&&!bubblePop.hidden;if(was){closeBubble();return;}selected=r;drawGraph();bubbleAnchor=Array.from(svg.querySelectorAll('g[data-city]')).find(g=>g.dataset.city===r.city);bubbleCity=r.city;
+function openBubble(r,focus=false,anchorKind='circle'){if(!r)return;const was=bubbleCity===r.city&&!bubblePop.hidden;if(was){closeBubble();return;}selected=r;drawGraph();if(cityTrigger)cityTrigger.querySelector('span:first-child').textContent=r.city;
+ if(anchorKind==='dropdown'){
+  const scroll=$('#rg-chartscroll'),chartWidth=svg.getBoundingClientRect().width;
+  const center=(82+r.road*100/130*828)/960*chartWidth;
+  scroll.scrollLeft=Math.max(0,center-scroll.clientWidth/2);
+ }
+ bubbleAnchor=Array.from(svg.querySelectorAll('g[data-city]')).find(g=>g.dataset.city===r.city);bubbleCity=r.city;
  const roadMult=1+r.road;const rows=[['rank','Overall disruption rank','No. '+r.rank,'50% flight rank + 50% road rank'],['flight','Historical flight-delay rate',pct(r.flight),'2021–2025'],['flight','Avg. arrival delay',mins(r.avgDelay),'Across all operated flights'],['road','Peak road-time increase',roadPct(r.road),'Forecast selected routes'],['road','Journey time vs. normal',roadMult.toFixed(2)+'×','Typical journey time'],['rain','AN precipitation estimate',pct(r.rain),r.forecastOnly?'Forecast only':'Forecast + market']];
  bubblePop.innerHTML='<div class="rg-pophead"><strong>'+esc(r.city)+'</strong><button class="rg-popclose" type="button" aria-label="Close city details">×</button></div><ul class="rg-poplist">'+rows.map(([kind,label,val,detail])=>'<li><span class="rg-popicon">'+bubbleIcons[kind]+'</span><span class="rg-poplabel">'+label+'<small class="rg-popsub">'+detail+'</small></span><strong class="rg-popvalue">'+val+'</strong></li>').join('')+'</ul>';
- bubblePop.hidden=false;positionBubble();if(bubbleAnchor)bubbleAnchor.focus({preventScroll:true});}
+ bubblePop.hidden=false;positionBubble();if(bubbleAnchor&&anchorKind!=='dropdown')bubbleAnchor.focus({preventScroll:true});}
 function drawGraph(){const X=82,Y=420,W=828,H=360,x=v=>X+(v/130)*W,y=v=>Y-(v-10)/18*H;let s='<rect width="960" height="485" fill="transparent"/>';
  for(let k=0;k<=125;k+=25){let p=x(k);s+=`<line x1="${p}" y1="${Y-H}" x2="${p}" y2="${Y}" stroke="#dbece2"/><text x="${p}" y="${Y+26}" text-anchor="middle" fill="#53695c" font-size="15" font-family="Arial">${k}%</text>`;}
  for(let k=12;k<=28;k+=4){let p=y(k);s+=`<line x1="${X}" y1="${p}" x2="${X+W}" y2="${p}" stroke="#dbece2"/><text x="${X-13}" y="${p+5}" text-anchor="end" fill="#53695c" font-size="15" font-family="Arial">${k}%</text>`;}
@@ -449,12 +496,14 @@ function drawGraph(){const X=82,Y=420,W=828,H=360,x=v=>X+(v/130)*W,y=v=>Y-(v-10)
  });svg.innerHTML=s;}
 // Accessible custom dropdowns contained within this widget
 const popup=$('#rg-popup'),filterTrigger=$('#rg-filter-trigger'),cityTrigger=$('#rg-city-trigger');
-const filters=[['all','Overall ranking'],['flight','Flight delay leaders'],['road','Road congestion leaders'],['rain','Precipitation leaders']];let openTrigger=null,opts=[],active=0;
+const filters=[['all','Overall ranking'],['flight','Flight delay leaders'],['road','Road congestion leaders'],['rain','Precipitation leaders']];
+const cities=[...data].sort((a,b)=>a.city.localeCompare(b.city)).map(r=>[r.city,r.city]);
+let openTrigger=null,opts=[],active=0;
 function closePopup(){if(openTrigger){openTrigger.setAttribute('aria-expanded','false');openTrigger.removeAttribute('aria-activedescendant');openTrigger=null;}popup.hidden=true;}
 function positionPopup(){if(!openTrigger)return;let r=openTrigger.getBoundingClientRect(),max=Math.min(308,opts.length*45+4),below=innerHeight-r.bottom-9,above=r.top-9,flip=below<Math.min(max,165)&&above>below;let h=Math.max(40,Math.min(max,flip?above:below)),w=Math.min(r.width,innerWidth-16);popup.style.width=w+'px';popup.style.maxHeight=h+'px';popup.style.left=Math.max(8,Math.min(r.left,innerWidth-w-8))+'px';popup.style.top=(flip?Math.max(8,r.top-h-2):Math.min(innerHeight-h-8,r.bottom+2))+'px';}
 function renderOptions(){popup.innerHTML=opts.map((v,i)=>`<button type="button" id="rg-option-${i}" data-option="${i}" role="option" aria-selected="${i===active}" class="rg-option ${i===active?'rg-hover':''}">${esc(v[1])}${i===active?' ✓':''}</button>`).join('');openTrigger.setAttribute('aria-activedescendant','rg-option-'+active);const target=popup.querySelector('.rg-hover');if(target)target.scrollIntoView({block:'nearest',behavior:'instant'});}
-function openPopup(trigger){closePopup();openTrigger=trigger;opts=filters;active=Math.max(0,opts.findIndex(v=>v[0]===activeFilter));trigger.setAttribute('aria-expanded','true');popup.hidden=false;renderOptions();positionPopup();}
-function chooseOption(i){if(!openTrigger||!opts[i])return;const val=opts[i][0];closePopup();activeFilter=val;filterTrigger.querySelector('span:first-child').textContent=filters.find(v=>v[0]===val)[1];sortKey=val==='all'?'rank':val;sortDir=val==='all'?1:-1;page=0;renderTable();}
+function openPopup(trigger){closePopup();openTrigger=trigger;const cityMode=trigger.dataset.listbox==='city';opts=cityMode?cities:filters;active=Math.max(0,opts.findIndex(v=>v[0]===(cityMode?(selected?.city||''):activeFilter)));trigger.setAttribute('aria-expanded','true');popup.setAttribute('aria-label',cityMode?'Choose a metro':'Sorting options');popup.hidden=false;renderOptions();positionPopup();}
+function chooseOption(i){if(!openTrigger||!opts[i])return;const val=opts[i][0],cityMode=openTrigger.dataset.listbox==='city';closePopup();if(cityMode){const r=data.find(x=>x.city===val);if(!r)return;closeBubble();openBubble(r,false,'dropdown');return;}activeFilter=val;filterTrigger.querySelector('span:first-child').textContent=filters.find(v=>v[0]===val)[1];sortKey=val==='all'?'rank':val;sortDir=val==='all'?1:-1;page=0;renderTable();}
 function comboKeyboard(e){let t=e.target.closest('[data-listbox]');if(!t)return;const keys=['ArrowDown','ArrowUp','Home','End','Enter',' ','Escape'];if(keys.includes(e.key)){e.preventDefault();if(e.key==='Escape'){closePopup();return;}if(!openTrigger)openPopup(t);if(e.key==='ArrowDown')active=Math.min(opts.length-1,active+1);if(e.key==='ArrowUp')active=Math.max(0,active-1);if(e.key==='Home')active=0;if(e.key==='End')active=opts.length-1;if(['Enter',' '].includes(e.key)){chooseOption(active);return;}renderOptions();}else if(openTrigger&&e.key.length===1&&!e.altKey&&!e.ctrlKey){let i=opts.findIndex((v,j)=>j>active&&v[1].toLowerCase().startsWith(e.key.toLowerCase()));active=i<0?Math.max(0,opts.findIndex(v=>v[1].toLowerCase().startsWith(e.key.toLowerCase()))):i;renderOptions();}}
 function results(){let search=$('#rg-search').value.trim().toLowerCase();return data.filter(r=>!search||r.city.toLowerCase().includes(search)).sort((a,b)=>{let comp=sortKey==='city'?a.city.localeCompare(b.city):sortKey==='one'?(1/a.flight-1/b.flight):a[sortKey]-b[sortKey];return comp*sortDir||(sortKey==='rank'?data.indexOf(a)-data.indexOf(b):a.city.localeCompare(b.city));});}
 function updateArrows(){const sc=$('#rg-full-scroll');let limit=sc.scrollWidth-sc.clientWidth;const holder=$('[data-arrows="full"]');holder.querySelector('[data-scroll="-1"]').disabled=sc.scrollLeft<=2;holder.querySelector('[data-scroll="1"]').disabled=sc.scrollLeft>=limit-2;}
@@ -554,7 +603,7 @@ function tablePng(){
 }
 // Smooth travel in actual scroll owner, with reduced-motion and deep-page return.
 let scrollRaf=0;function ownerOf(el){let cur=el.parentElement;while(cur&&cur!==document.body&&cur!==document.documentElement){const s=getComputedStyle(cur);if(cur.scrollHeight>cur.clientHeight+10&&/(auto|scroll)/.test(s.overflowY))return cur;cur=cur.parentElement;}return document.scrollingElement||document.documentElement;}
-function goTo(id){let to=$('#'+id);if(!to)return;closePopup();closeBubble();hideTip();if(rgScrollHostTo(to,id))return;let owner=ownerOf(to),doc=owner===document.scrollingElement||owner===document.documentElement,start=owner.scrollTop,nav=$('#rg-menu'),clear=id==='rg-menu'?0:nav.getBoundingClientRect().height+12,top=id==='rg-menu'?(owner===root?$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight:start+root.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)+$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight):start+to.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)-clear,end=Math.max(0,Math.min(owner.scrollHeight-owner.clientHeight,top));if(scrollRaf)cancelAnimationFrame(scrollRaf);if(reduce.matches){owner.scrollTop=end;return;}const begin=performance.now(),delta=end-start;function frame(t){let n=Math.min(1,(t-begin)/760),ease=n<.5?4*n*n*n:1-Math.pow(-2*n+2,3)/2;owner.scrollTop=start+delta*ease;if(n<1)scrollRaf=requestAnimationFrame(frame);else{scrollRaf=0;owner.scrollTop=end;}}scrollRaf=requestAnimationFrame(frame);}
+function goTo(id){let to=$('#'+id);if(!to)return;closePopup();closeBubble();hideTip();if(rgScrollHostTo(to,id))return;rgRequestHostJump(to,id);let owner=ownerOf(to),doc=owner===document.scrollingElement||owner===document.documentElement,start=owner.scrollTop,nav=$('#rg-menu'),clear=id==='rg-menu'?0:nav.getBoundingClientRect().height+12,top=id==='rg-menu'?(owner===root?$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight:start+root.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)+$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight):start+to.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)-clear,end=Math.max(0,Math.min(owner.scrollHeight-owner.clientHeight,top));if(scrollRaf)cancelAnimationFrame(scrollRaf);if(reduce.matches){owner.scrollTop=end;return;}const begin=performance.now(),delta=end-start;function frame(t){let n=Math.min(1,(t-begin)/760),ease=n<.5?4*n*n*n:1-Math.pow(-2*n+2,3)/2;owner.scrollTop=start+delta*ease;if(n<1)scrollRaf=requestAnimationFrame(frame);else{scrollRaf=0;owner.scrollTop=end;}}scrollRaf=requestAnimationFrame(frame);}
 const tip=$('#rg-tooltip');let tipTarget=null;
 function showTip(el){tipTarget=el;tip.textContent=el.dataset.help||'';tip.hidden=false;tip.classList.remove('rg-below');tip.style.visibility='hidden';let r=el.getBoundingClientRect(),t=tip.getBoundingClientRect(),left=Math.max(9,Math.min(innerWidth-t.width-9,r.left+r.width/2-t.width/2)),top=r.top-t.height-13;if(top<8){top=r.bottom+12;tip.classList.add('rg-below');}tip.style.left=left+'px';tip.style.top=Math.max(8,top)+'px';tip.style.setProperty('--rg-arrow',Math.max(12,Math.min(t.width-12,r.left+r.width/2-left))+'px');tip.style.visibility='visible';}
 function hideTip(){tip.hidden=true;tipTarget=null;}
