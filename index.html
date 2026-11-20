@@ -161,7 +161,8 @@
 #rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay)::-webkit-scrollbar{height:7px;width:7px}
 #rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay)::-webkit-scrollbar-track{background:#e6f4eb}
 #rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay)::-webkit-scrollbar-thumb{background:#00bd70;border-radius:7px}
-#rg-research-root.rg-framed{height:min(100dvh,900px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb}
+/* Expand the full report inside a CMS iframe; never cap it to the viewport. */
+#rg-research-root.rg-framed{height:auto!important;min-height:0!important;max-height:none!important;overflow-y:visible!important;overscroll-behavior:auto;scrollbar-width:thin;scrollbar-color:#00bd70 #e6f4eb}
 #rg-research-root.rg-framed::-webkit-scrollbar{width:8px}
 #rg-research-root.rg-framed::-webkit-scrollbar-thumb{background:#00bd70}
 @media(max-width:900px){#rg-research-root .rg-sources{grid-template-columns:1fr}#rg-research-root .rg-charttop{align-items:stretch}#rg-research-root .rg-chartselect{flex-basis:100%;max-width:none}#rg-research-root .rg-chartoverlay{width:280px}}
@@ -289,6 +290,28 @@
 #rg-research-root .an-short-intro .rg-wrap{padding-block:18px}
 #rg-research-root .an-short-intro p{font-size:clamp(15px,1.3vw,17px);line-height:1.6;color:#315a45;margin:0;max-width:1050px}
 #rg-research-root .an-short-intro strong{color:#0c1c16}
+
+/* Final polish: compact finish at the last Back to Menu control. */
+#rg-research-root #rg-full{padding-bottom:0!important;border-bottom:0!important}
+#rg-research-root #rg-full .rg-return{margin-bottom:0!important}
+#rg-research-root #rg-full .rg-wrap{padding-bottom:0!important}
+/* Branded vertical scrollbars in the standalone page and CMS iframe. */
+html,body{margin:0;padding:0;scrollbar-width:thin;scrollbar-color:#00bd70 #e9f6ed}
+#rg-research-root,
+#rg-research-root.rg-framed,
+#rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay,.rg-bubble-pop){scrollbar-width:thin;scrollbar-color:#00bd70 #e9f6ed}
+html::-webkit-scrollbar,body::-webkit-scrollbar,
+#rg-research-root::-webkit-scrollbar,
+#rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay,.rg-bubble-pop)::-webkit-scrollbar{width:9px;height:8px}
+html::-webkit-scrollbar-track,body::-webkit-scrollbar-track,
+#rg-research-root::-webkit-scrollbar-track,
+#rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay,.rg-bubble-pop)::-webkit-scrollbar-track{background:#e9f6ed;border-radius:100px}
+html::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb,
+#rg-research-root::-webkit-scrollbar-thumb,
+#rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay,.rg-bubble-pop)::-webkit-scrollbar-thumb{background:#00bd70;border-radius:100px;border:2px solid #e9f6ed}
+html::-webkit-scrollbar-thumb:hover,body::-webkit-scrollbar-thumb:hover,
+#rg-research-root::-webkit-scrollbar-thumb:hover,
+#rg-research-root :is(.rg-navtrack,.rg-scroll,.rg-chartscroll,.rg-overlay,.rg-bubble-pop)::-webkit-scrollbar-thumb:hover{background:#087d50}
 </style></head><body><div id="rg-research-root"><div class="rg-bluebar"></div>
 <header class="rg-top"><div class="rg-wrap"><div class="rg-topmeta"><div class="rg-word" aria-label="The Action Network"><span class="an-word-action">ACTION</span><span class="an-word-check" aria-hidden="true">✓</span><span class="an-word-network">NETWORK</span></div><small>Thanksgiving travel analysis · 2026</small></div>
 <div class="rg-stats">
@@ -325,6 +348,51 @@
 <div id="rg-popup" class="rg-overlay" role="listbox" aria-label="Options" hidden></div><div id="rg-tooltip" class="rg-tooltip" role="tooltip" hidden></div>
 </div><script>(function(){'use strict';
 const root=document.getElementById('rg-research-root');if(!root)return;
+// Let the host page scroll. A fixed-height iframe/root creates the clipped, nested scrollbar seen in CMS.
+function rgResizeHostIframe(){
+ if(window.parent===window)return;
+ const height=Math.ceil(root.getBoundingClientRect().height)+2;
+ try{
+  const frame=window.frameElement;
+  if(frame){
+   const next=height+'px';
+   if(frame.style.height!==next)frame.style.setProperty('height',next,'important');
+   frame.style.setProperty('max-height','none','important');
+   frame.style.setProperty('overflow','hidden');
+   frame.setAttribute('scrolling','no');
+  }
+ }catch(_){}
+ // Optional host-CMS listener for installations that restrict direct iframe access.
+ try{window.parent.postMessage({type:'action-network-thanksgiving-resize',height:height},'*');}catch(_){}
+}
+if(window.parent!==window){
+ if('ResizeObserver' in window){
+  const ro=new ResizeObserver(()=>{requestAnimationFrame(rgResizeHostIframe);});ro.observe(root);
+ }
+ window.addEventListener('load',rgResizeHostIframe,{once:true});
+ window.addEventListener('resize',rgResizeHostIframe,{passive:true});
+ requestAnimationFrame(rgResizeHostIframe);
+}
+// Navigation must scroll the CMS host, not an iframe enlarged to the entire report height.
+function rgScrollHostTo(to,id){
+ if(window.parent===window)return false;
+ try{
+  const frame=window.frameElement;if(!frame)return false;
+  const parentWindow=window.parent,parentDoc=parentWindow.document;
+  let owner=frame.parentElement;
+  while(owner&&owner!==parentDoc.body&&owner!==parentDoc.documentElement){
+   const cs=parentWindow.getComputedStyle(owner);
+   if(owner.scrollHeight>owner.clientHeight+10&&/(auto|scroll)/.test(cs.overflowY))break;
+   owner=owner.parentElement;
+  }
+  if(!owner||owner===parentDoc.body||owner===parentDoc.documentElement)owner=parentDoc.scrollingElement||parentDoc.documentElement;
+  const isDocument=owner===parentDoc.scrollingElement||owner===parentDoc.documentElement;
+  const pos=frame.getBoundingClientRect().top+(id==='rg-menu'?0:to.getBoundingClientRect().top);
+  const top=Math.max(0,owner.scrollTop+pos-(isDocument?0:owner.getBoundingClientRect().top)-12);
+  owner.scrollTo({top:top,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  return true;
+ }catch(_){return false;}
+}
 try{if(window.self!==window.top)root.classList.add('rg-framed');}catch(_){root.classList.add('rg-framed');}
 const data=[{"rank":1,"city":"New York","flight":0.2006,"one":"1 in 5","avgDelay":13.58,"road":1.2,"rain":0.633925,"forecastOnly":false,"multiple":2.2},{"rank":2,"city":"Washington, D.C.","flight":0.1918,"one":"1 in 5","avgDelay":12.7,"road":1.19,"rain":0.6320416667,"forecastOnly":false,"multiple":2.19},{"rank":3,"city":"Philadelphia","flight":0.1922,"one":"1 in 5","avgDelay":15.26,"road":0.735,"rain":0.683625,"forecastOnly":false,"multiple":1.735},{"rank":3,"city":"Boston","flight":0.1791,"one":"1 in 6","avgDelay":12.77,"road":0.93,"rain":0.629575,"forecastOnly":false,"multiple":1.93},{"rank":5,"city":"Detroit","flight":0.2572,"one":"1 in 4","avgDelay":19.65,"road":0.4067,"rain":0.6057021475,"forecastOnly":false,"multiple":1.4067},{"rank":6,"city":"Seattle","flight":0.1763,"one":"1 in 6","avgDelay":10.43,"road":0.89,"rain":0.7462666667,"forecastOnly":false,"multiple":1.89},{"rank":7,"city":"Chicago","flight":0.2314,"one":"1 in 4","avgDelay":19.77,"road":0.4,"rain":0.4303379912,"forecastOnly":false,"multiple":1.4},{"rank":8,"city":"Tampa","flight":0.1782,"one":"1 in 6","avgDelay":12.36,"road":0.6333,"rain":0.199975,"forecastOnly":false,"multiple":1.6333},{"rank":8,"city":"Los Angeles","flight":0.1401,"one":"1 in 7","avgDelay":10.07,"road":1.1533,"rain":0.140125,"forecastOnly":false,"multiple":2.1533},{"rank":10,"city":"Denver","flight":0.1863,"one":"1 in 5","avgDelay":11.68,"road":0.45,"rain":0.03441705826,"forecastOnly":false,"multiple":1.45},{"rank":11,"city":"Minneapolis","flight":0.1948,"one":"1 in 5","avgDelay":15.04,"road":0.38,"rain":0.56271875,"forecastOnly":false,"multiple":1.38},{"rank":11,"city":"Atlanta","flight":0.1742,"one":"1 in 6","avgDelay":10.79,"road":0.4833,"rain":0.226075,"forecastOnly":false,"multiple":1.4833},{"rank":13,"city":"San Diego","flight":0.1689,"one":"1 in 6","avgDelay":11.75,"road":0.47,"rain":0.1643655489,"forecastOnly":false,"multiple":1.47},{"rank":13,"city":"San Francisco","flight":0.1317,"one":"1 in 8","avgDelay":8.8,"road":0.8833,"rain":0.4717601636,"forecastOnly":false,"multiple":1.8833},{"rank":15,"city":"Portland, Oregon","flight":0.1399,"one":"1 in 7","avgDelay":8.97,"road":0.44,"rain":0.75,"forecastOnly":true,"multiple":1.44},{"rank":16,"city":"Houston","flight":0.157,"one":"1 in 6","avgDelay":10.2,"road":0.3833,"rain":0.09648266612,"forecastOnly":false,"multiple":1.3833}];
 const $=s=>root.querySelector(s),$$=s=>Array.from(root.querySelectorAll(s));
@@ -486,7 +554,7 @@ function tablePng(){
 }
 // Smooth travel in actual scroll owner, with reduced-motion and deep-page return.
 let scrollRaf=0;function ownerOf(el){let cur=el.parentElement;while(cur&&cur!==document.body&&cur!==document.documentElement){const s=getComputedStyle(cur);if(cur.scrollHeight>cur.clientHeight+10&&/(auto|scroll)/.test(s.overflowY))return cur;cur=cur.parentElement;}return document.scrollingElement||document.documentElement;}
-function goTo(id){let to=$('#'+id);if(!to)return;closePopup();closeBubble();hideTip();let owner=ownerOf(to),doc=owner===document.scrollingElement||owner===document.documentElement,start=owner.scrollTop,nav=$('#rg-menu'),clear=id==='rg-menu'?0:nav.getBoundingClientRect().height+12,top=id==='rg-menu'?(owner===root?$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight:start+root.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)+$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight):start+to.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)-clear,end=Math.max(0,Math.min(owner.scrollHeight-owner.clientHeight,top));if(scrollRaf)cancelAnimationFrame(scrollRaf);if(reduce.matches){owner.scrollTop=end;return;}const begin=performance.now(),delta=end-start;function frame(t){let n=Math.min(1,(t-begin)/760),ease=n<.5?4*n*n*n:1-Math.pow(-2*n+2,3)/2;owner.scrollTop=start+delta*ease;if(n<1)scrollRaf=requestAnimationFrame(frame);else{scrollRaf=0;owner.scrollTop=end;}}scrollRaf=requestAnimationFrame(frame);}
+function goTo(id){let to=$('#'+id);if(!to)return;closePopup();closeBubble();hideTip();if(rgScrollHostTo(to,id))return;let owner=ownerOf(to),doc=owner===document.scrollingElement||owner===document.documentElement,start=owner.scrollTop,nav=$('#rg-menu'),clear=id==='rg-menu'?0:nav.getBoundingClientRect().height+12,top=id==='rg-menu'?(owner===root?$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight:start+root.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)+$('.rg-bluebar').offsetHeight+$('.rg-top').offsetHeight):start+to.getBoundingClientRect().top-(doc?0:owner.getBoundingClientRect().top)-clear,end=Math.max(0,Math.min(owner.scrollHeight-owner.clientHeight,top));if(scrollRaf)cancelAnimationFrame(scrollRaf);if(reduce.matches){owner.scrollTop=end;return;}const begin=performance.now(),delta=end-start;function frame(t){let n=Math.min(1,(t-begin)/760),ease=n<.5?4*n*n*n:1-Math.pow(-2*n+2,3)/2;owner.scrollTop=start+delta*ease;if(n<1)scrollRaf=requestAnimationFrame(frame);else{scrollRaf=0;owner.scrollTop=end;}}scrollRaf=requestAnimationFrame(frame);}
 const tip=$('#rg-tooltip');let tipTarget=null;
 function showTip(el){tipTarget=el;tip.textContent=el.dataset.help||'';tip.hidden=false;tip.classList.remove('rg-below');tip.style.visibility='hidden';let r=el.getBoundingClientRect(),t=tip.getBoundingClientRect(),left=Math.max(9,Math.min(innerWidth-t.width-9,r.left+r.width/2-t.width/2)),top=r.top-t.height-13;if(top<8){top=r.bottom+12;tip.classList.add('rg-below');}tip.style.left=left+'px';tip.style.top=Math.max(8,top)+'px';tip.style.setProperty('--rg-arrow',Math.max(12,Math.min(t.width-12,r.left+r.width/2-left))+'px');tip.style.visibility='visible';}
 function hideTip(){tip.hidden=true;tipTarget=null;}
